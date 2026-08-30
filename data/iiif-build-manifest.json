@@ -1,0 +1,110 @@
+{
+  "iiif_version": "Image API 3",
+  "profile": "level0",
+  "base_url": "http://localhost:8000/iiif",
+  "tile_size": 512,
+  "jpeg_quality": 90,
+  "source_count": 9,
+  "sources": [
+    {
+      "document": "Se_18_Assemblées_3_Bilanz1968_2_page_9",
+      "identifier": "Se_18_Assemblees_3_Bilanz1968_2_page_9",
+      "source_json": "data/RAW/Se_18_Assemblées_3_Bilanz1968_2_page_9.json",
+      "source_image": "data/RAW/Se_18_Assemblées_3_Bilanz1968_2_page_9.jpg",
+      "info_json": "iiif/Se_18_Assemblees_3_Bilanz1968_2_page_9/info.json",
+      "service_id": "http://localhost:8000/iiif/Se_18_Assemblees_3_Bilanz1968_2_page_9",
+      "status": "generated",
+      "width": 2480,
+      "height": 3159
+    },
+    {
+      "document": "Se_18_Assemblées_4_Bilanz1965_1_page_7",
+      "identifier": "Se_18_Assemblees_4_Bilanz1965_1_page_7",
+      "source_json": "data/RAW/Se_18_Assemblées_4_Bilanz1965_1_page_7.json",
+      "source_image": "data/RAW/Se_18_Assemblées_4_Bilanz1965_1_page_7.jpg",
+      "info_json": "iiif/Se_18_Assemblees_4_Bilanz1965_1_page_7/info.json",
+      "service_id": "http://localhost:8000/iiif/Se_18_Assemblees_4_Bilanz1965_1_page_7",
+      "status": "generated",
+      "width": 2480,
+      "height": 3450
+    },
+    {
+      "document": "Se_18_Bilanz1967_page_4",
+      "identifier": "Se_18_Bilanz1967_page_4",
+      "source_json": "data/RAW/Se_18_Bilanz1967_page_4.json",
+      "source_image": "assets/workflow/Se_18_Bilanz1967_page_4.webp",
+      "info_json": "iiif/Se_18_Bilanz1967_page_4/info.json",
+      "service_id": "http://localhost:8000/iiif/Se_18_Bilanz1967_page_4",
+      "status": "generated",
+      "width": 1400,
+      "height": 1807
+    },
+    {
+      "document": "Se_19_Assemblée Mine d. Costano_1_Assemblee 28.12.1967_1_page_4",
+      "identifier": "Se_19_Assemblee_Mine_d._Costano_1_Assemblee_28.12.1967_1_page_4",
+      "source_json": "data/RAW/Se_19_Assemblée Mine d. Costano_1_Assemblee 28.12.1967_1_page_4.json",
+      "source_image": "data/RAW/Se_19_Assemblée Mine d. Costano_1_Assemblee 28.12.1967_1_page_4.jpg",
+      "info_json": "iiif/Se_19_Assemblee_Mine_d._Costano_1_Assemblee_28.12.1967_1_page_4/info.json",
+      "service_id": "http://localhost:8000/iiif/Se_19_Assemblee_Mine_d._Costano_1_Assemblee_28.12.1967_1_page_4",
+      "status": "generated",
+      "width": 2480,
+      "height": 3217
+    },
+    {
+      "document": "Se_19_Assemblée Mine d. Costano_2.3_27.12.1961.pdf_page_3",
+      "identifier": "Se_19_Assemblee_Mine_d._Costano_2.3_27.12.1961.pdf_page_3",
+      "source_json": "data/RAW/Se_19_Assemblée Mine d. Costano_2.3_27.12.1961.pdf_page_3.json",
+      "source_image": "data/RAW/Se_19_Assemblée Mine d. Costano_2.3_27.12.1961.pdf_page_3.jpg",
+      "info_json": "iiif/Se_19_Assemblee_Mine_d._Costano_2.3_27.12.1961.pdf_page_3/info.json",
+      "service_id": "http://localhost:8000/iiif/Se_19_Assemblee_Mine_d._Costano_2.3_27.12.1961.pdf_page_3",
+      "status": "generated",
+      "width": 2480,
+      "height": 3159
+    },
+    {
+      "document": "Se_19_Assemblée Mine d. Costano_2.9_12.1962_page_4",
+      "identifier": "Se_19_Assemblee_Mine_d._Costano_2.9_12.1962_page_4",
+      "source_json": "data/RAW/Se_19_Assemblée Mine d. Costano_2.9_12.1962_page_4.json",
+      "source_image": "data/RAW/Se_19_Assemblée Mine d. Costano_2.9_12.1962_page_4.jpg",
+      "info_json": "iiif/Se_19_Assemblee_Mine_d._Costano_2.9_12.1962_page_4/info.json",
+      "service_id": "http://localhost:8000/iiif/Se_19_Assemblee_Mine_d._Costano_2.9_12.1962_page_4",
+      "status": "generated",
+      "width": 2480,
+      "height": 3225
+    },
+    {
+      "document": "Se_23_Assemblée_1951_Generalversammlung1_page_2",
+      "identifier": "Se_23_Assemblee_1951_Generalversammlung1_page_2",
+      "source_json": "data/RAW/Se_23_Assemblée_1951_Generalversammlung1_page_2.json",
+      "source_image": "data/RAW/Se_23_Assemblée_1951_Generalversammlung1_page_2.jpg",
+      "info_json": "iiif/Se_23_Assemblee_1951_Generalversammlung1_page_2/info.json",
+      "service_id": "http://localhost:8000/iiif/Se_23_Assemblee_1951_Generalversammlung1_page_2",
+      "status": "generated",
+      "width": 2263,
+      "height": 3509
+    },
+    {
+      "document": "Se_23_Assemblée_1951_Generalversammlung1_page_3",
+      "identifier": "Se_23_Assemblee_1951_Generalversammlung1_page_3",
+      "source_json": "data/RAW/Se_23_Assemblée_1951_Generalversammlung1_page_3.json",
+      "source_image": "data/RAW/Se_23_Assemblée_1951_Generalversammlung1_page_3.jpg",
+      "info_json": "iiif/Se_23_Assemblee_1951_Generalversammlung1_page_3/info.json",
+      "service_id": "http://localhost:8000/iiif/Se_23_Assemblee_1951_Generalversammlung1_page_3",
+      "status": "generated",
+      "width": 2480,
+      "height": 3509
+    },
+    {
+      "document": "Se_23_Assemblée_1951_Generalversammlung5_page_20",
+      "identifier": "Se_23_Assemblee_1951_Generalversammlung5_page_20",
+      "source_json": "data/RAW/Se_23_Assemblée_1951_Generalversammlung5_page_20.json",
+      "source_image": "data/RAW/Se_23_Assemblée_1951_Generalversammlung5_page_20.jpg",
+      "info_json": "iiif/Se_23_Assemblee_1951_Generalversammlung5_page_20/info.json",
+      "service_id": "http://localhost:8000/iiif/Se_23_Assemblee_1951_Generalversammlung5_page_20",
+      "status": "generated",
+      "width": 2480,
+      "height": 2975
+    }
+  ],
+  "unmatched_json": []
+}

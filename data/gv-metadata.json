@@ -1,0 +1,66 @@
+{
+  "gv_1951": {
+    "title": "Generalversammlung 1951",
+    "year": 1951,
+    "date": "",
+    "source_files": [
+      "Se_23_Assemblée_1951_Generalversammlung1_page_2.json",
+      "Se_23_Assemblée_1951_Generalversammlung1_page_3.json",
+      "Se_23_Assemblée_1951_Generalversammlung5_page_20.json"
+    ]
+  },
+
+  "gv_1961_12_27": {
+    "title": "Generalversammlung vom 27.12.1961",
+    "year": 1961,
+    "date": "1961-12-27",
+    "source_files": [
+      "Se_19_Assemblée Mine d. Costano_2.3_27.12.1961.pdf_page_3.json"
+    ]
+  },
+
+  "gv_1962_12_09": {
+    "title": "Generalversammlung vom 09.12.1962",
+    "year": 1962,
+    "date": "1962-12-09",
+    "source_files": [
+      "Se_19_Assemblée Mine d. Costano_2.9_12.1962_page_4.json"
+    ]
+  },
+
+  "gv_1965": {
+    "title": "Generalversammlung 1965",
+    "year": 1965,
+    "date": "",
+    "source_files": [
+      "Se_18_Assemblées_4_Bilanz1965_1_page_7.json"
+    ]
+  },
+
+  "gv_1967_12_28": {
+    "title": "Generalversammlung vom 28.12.1967",
+    "year": 1967,
+    "date": "1967-12-28",
+    "source_files": [
+      "Se_19_Assemblée Mine d. Costano_1_Assemblee 28.12.1967_1_page_4.json"
+    ]
+  },
+
+  "gv_1968_11_30": {
+    "title": "Generalversammlung vom 30.11.1968",
+    "year": 1968,
+    "date": "1968-11-30",
+    "source_files": [
+      "Se_18_Bilanz1967_page_4.json"
+    ]
+  },
+
+  "gv_1969_12_20": {
+    "title": "Generalversammlung vom 20.12.1969",
+    "year": 1969,
+    "date": "1969-12-20",
+    "source_files": [
+      "Se_18_Assemblées_3_Bilanz1968_2_page_9.json"
+    ]
+  }
+}

@@ -1,0 +1,2612 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Digitale Exploration historischer Generalversammlungen, Aktionär*innen und Wohnorte."
+  >
+
+  <title>Aktionär*innen und Generalversammlungen</title>
+
+  <!-- Eigene Gestaltung -->
+  <link rel="stylesheet" href="style.css?v=20260829-submission15">
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  >
+
+  <!-- Leaflet MarkerCluster -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+  >
+</head>
+
+<body class="landing-active">
+
+  <!-- =========================================================
+       VISUELLER EINSTIEG
+       ========================================================= -->
+  <section
+    id="landingScreen"
+    class="landing-screen"
+    aria-labelledby="landingTitle"
+  >
+    <img
+      class="landing-image"
+      src="assets/mine-entrance.png"
+      alt="Schwarz-weisse Aufnahme eines Mineneingangs; eine Person bewegt einen Grubenwagen in Richtung Stollen."
+    >
+
+    <div class="landing-overlay" aria-hidden="true"></div>
+
+    <div class="landing-content">
+      <div class="landing-copy">
+        <p class="landing-kicker">Digital-Humanities-Forschungsprojekt</p>
+        <h1 id="landingTitle">Mines de Costano S.A.</h1>
+        <p class="landing-subtitle">Archiv · Daten · Räume · Besitzverhältnisse</p>
+      </div>
+
+      <button id="enterResearchButton" class="landing-enter" type="button">
+        In die Forschung eintreten
+        <span aria-hidden="true">→</span>
+      </button>
+    </div>
+  </section>
+
+
+  <main id="siteContent" class="site-shell" aria-hidden="true">
+
+    <!-- =========================================================
+         PRIMÄRE NAVIGATION
+         ========================================================= -->
+    <nav class="site-navigation" aria-label="Hauptnavigation">
+      <div class="site-brand">
+        <span class="site-brand-kicker">Digital Humanities</span>
+        <strong>Mines de Costano S.A.</strong>
+      </div>
+
+      <div class="page-switch" role="group" aria-label="Grundseiten wechseln">
+        <button
+          id="researchPageButton"
+          class="page-switch-button active"
+          type="button"
+          aria-pressed="true"
+        >
+          Forschungsansatz
+        </button>
+
+        <button
+          id="corpusPageButton"
+          class="page-switch-button"
+          type="button"
+          aria-pressed="false"
+        >
+          Quellenkorpus &amp; Visualisierungen
+        </button>
+
+        <button
+          id="nodegoatPageButton"
+          class="page-switch-button"
+          type="button"
+          aria-pressed="false"
+        >
+          Nodegoat Explorer
+        </button>
+      </div>
+    </nav>
+
+
+    <!-- =========================================================
+         GRUNDSEITE 1: FORSCHUNGSANSATZ
+         ========================================================= -->
+    <section id="researchView" class="view">
+
+      <header class="hero research-hero">
+        <p class="eyebrow">Digital-Humanities-Forschungsprojekt</p>
+
+        <h1>Mines de Costano S.A.</h1>
+
+        <p class="lead">
+          Von der Archivarbeit über die Strukturierung historischer Daten
+          bis zu ihrer digitalen Analyse und visuellen Präsentation.
+        </p>
+      </header>
+
+      <section class="research-section" aria-labelledby="researchTitle">
+        <div class="research-heading">
+          <div>
+            <p class="label">Forschungsansatz</p>
+            <h2 id="researchTitle">Von der Archivquelle zur digitalen historischen Analyse</h2>
+          </div>
+
+          <p class="research-intro">
+            Dieses Projekt versteht sich als Experimentierfeld für digitale historische Forschung.
+            Es verfolgt den Weg von der Arbeit im Archiv über die Digitalisierung und Strukturierung
+            historischer Quellen bis hin zu ihrer digitalen Analyse und Präsentation. Dabei kommen
+            unterschiedliche Werkzeuge und Methoden der Digital Humanities zum Einsatz, die nicht
+            nur der Verarbeitung historischer Daten dienen, sondern zugleich neue Perspektiven auf
+            das Quellenmaterial eröffnen sollen.
+          </p>
+        </div>
+
+        <div class="research-grid">
+          <article class="research-block research-block-wide">
+            <p class="research-kicker">Quellen und Daten</p>
+            <p>
+              Als Ausgangspunkt dienen die Protokolle der Generalversammlungen der
+              <strong>Mines de Costano S.A.</strong> und insbesondere die darin dokumentierten
+              Aktienverhältnisse. Diese Quellen bieten einen vergleichsweise klar strukturierten
+              und tabellarischen Datensatz: Namen von Aktionär*innen, Aktienbestände, Wohnorte und
+              Veränderungen der Beteiligungsverhältnisse lassen sich systematisch erfassen und
+              über mehrere Generalversammlungen hinweg miteinander vergleichen. Gerade diese
+              Struktur macht das Material für digitale Methoden besonders geeignet. Personen und
+              Adressen können mit weiteren digitalen Datenbeständen verknüpft, räumlich dargestellt
+              und in unterschiedlichen Formen visualisiert werden.
+            </p>
+          </article>
+
+          <article class="research-block">
+            <p class="research-kicker">Datenmodellierung</p>
+            <h3>nodegoat als Forschungsumgebung</h3>
+            <p>
+              Für die Modellierung, Verwaltung und Analyse dieser Daten wird <strong>nodegoat</strong>
+              eingesetzt. Die Forschungsumgebung hat sich insbesondere in den Digital Humanities
+              als Werkzeug für die strukturierte Erfassung, Verknüpfung, Analyse und Visualisierung
+              historischer Daten etabliert. Personen, Orte, Generalversammlungen und Aktienbesitz
+              können so nicht lediglich als einzelne Informationen, sondern als miteinander
+              verbundene historische Entitäten modelliert werden.
+            </p>
+          </article>
+
+          <article class="research-block">
+            <p class="research-kicker">Historische Perspektive</p>
+            <h3>Personen, Kapital, Raum und Zeit</h3>
+            <p>
+              Die Webpräsentation verfolgt das Ziel, die zunächst abstrakt erscheinenden
+              Aktienverhältnisse der <strong>Mines de Costano S.A.</strong> anschaulicher und
+              historisch greifbarer zu machen. In Anlehnung an Fernand Braudel wird historische
+              Wirklichkeit als Zusammenspiel unterschiedlicher zeitlicher, räumlicher und
+              struktureller Ebenen verstanden. Digitale Methoden ermöglichen es, diese Ebenen
+              miteinander in Beziehung zu setzen und abstrakte Informationen mit räumlichen und
+              visuellen Eindrücken zu verbinden.
+            </p>
+          </article>
+
+          <article class="research-block">
+            <p class="research-kicker">Aktionär*innen und Lebensräume</p>
+            <h3>Räumliche und soziale Kontraste</h3>
+            <p>
+              Über die in den Quellen überlieferten Adressen werden die Wohnorte der Aktionär*innen
+              kartiert und – soweit möglich – mit heutigen Strassenansichten verknüpft. Dadurch wird
+              der räumliche und soziale Kontrast innerhalb der Geschichte der Mines de Costano S.A.
+              sichtbar: Der abgelegenen, alpinen und stark von körperlicher Arbeit geprägten Realität
+              des Bergbaus stehen Lebenswelten von Anteilseigner*innen gegenüber, die beispielsweise
+              in Pariser Stadtvierteln, in Brüssel oder auf Landgütern und Schlössern lebten.
+            </p>
+            <p class="research-note">
+              Gegenwärtige Strassenbilder werden dabei nicht als unmittelbare Rekonstruktion
+              historischer Lebensrealitäten verstanden, sondern als räumliche Annäherung und als
+              Mittel, die geografische Distanz zwischen Rohstoffgewinnung, Eigentum und Kapital
+              sichtbar zu machen.
+            </p>
+          </article>
+
+          <article class="research-block">
+            <p class="research-kicker">Netzwerke und Besitzverhältnisse</p>
+            <h3>Verbindungen und Veränderungen</h3>
+            <p>
+              Adressen und Beteiligungen erlauben es, Netzwerke innerhalb der Aktionärschaft zu
+              untersuchen. Räumliche Konzentrationen sowie wiederkehrende Verbindungen zwischen
+              französischen und belgischen Anteilseigner*innen können Hinweise auf soziale,
+              wirtschaftliche und geografische Netzwerke geben, in die die Mines de Costano S.A.
+              eingebettet war. Zugleich zeigt der Vergleich mehrerer Generalversammlungen, wann
+              Personen investierten, ihre Beteiligungen ausbauten, reduzierten oder vollständig aus
+              dem Unternehmen ausschieden.
+            </p>
+          </article>
+
+          <article class="research-block research-block-wide research-conclusion">
+            <p class="research-kicker">Weitere Analyseebene</p>
+            <p>
+              Wo die Quellen eine Zuordnung ermöglichen, lässt sich zudem die geschlechtliche
+              Zusammensetzung der Aktionärschaft untersuchen. Männliche und weibliche Aktionär*innen
+              können vergleichend betrachtet werden, wodurch eine Dimension sichtbar wird, die in
+              einer rein unternehmensgeschichtlichen Darstellung leicht in den Hintergrund tritt.
+            </p>
+            <p class="research-thesis">
+              Die digitale Präsentation verbindet damit <strong>Personen, Kapital, Raum und Zeit</strong>
+              und erzählt die Geschichte der Mines de Costano S.A. als räumlich weit verzweigtes
+              Geflecht von Menschen, Besitzverhältnissen und sozialen Lebenswelten.
+            </p>
+          </article>
+        </div>
+      </section>
+
+
+      <!-- =========================================================
+           FORSCHUNGSWORKFLOW
+           ========================================================= -->
+      <section
+        id="researchWorkflow"
+        class="workflow-section"
+        aria-labelledby="workflowTitle"
+      >
+        <div class="workflow-heading">
+          <div>
+            <p class="label">Forschungsworkflow</p>
+            <h2 id="workflowTitle">
+              Vom Forschungsseminar zur digitalen Forschungsumgebung
+            </h2>
+          </div>
+
+          <p class="workflow-intro">
+            Das Projekt entwickelte sich schrittweise aus Lehrveranstaltungen,
+            praktischer Arbeit mit Forschungsdaten und einem eigenen
+            Digital-Humanities-Forschungsprojekt. Die ersten vier Stationen
+            bilden die methodische Grundlage. Darauf folgt der konkrete
+            Workflow, mit dem die historischen Aktionärsdaten erschlossen,
+            modelliert, georeferenziert, analysiert und auf dieser Website
+            zugänglich gemacht werden. Ein eigener Abschnitt zur digitalen
+            Forschungsinfrastruktur macht zudem transparent, welche Werkzeuge
+            eingesetzt werden, welche Aufgaben sie übernehmen und nach welchen
+            Kriterien sie ausgewählt wurden. Ziel ist es, im Rahmen meiner
+            Masterarbeit in Digital Humanities methodische Ansätze, praktische
+            Fähigkeiten und einen reflektierten Einsatz digitaler Werkzeuge
+            miteinander zu verbinden.
+          </p>
+        </div>
+
+        <div class="workflow-phase">
+          <div class="workflow-phase-label">
+            <span class="workflow-phase-number">I</span>
+            <div>
+              <p class="research-kicker">Methodische Basis</p>
+              <h3>Forschung, Quellenarbeit und Datenpraxis</h3>
+            </div>
+          </div>
+
+          <div class="workflow-foundation-grid">
+
+            <article class="workflow-foundation-card">
+              <div class="workflow-card-top">
+                <span class="workflow-step-number">01</span>
+                <span class="workflow-type">Forschungsseminar</span>
+              </div>
+
+              <h3>Miniera d'oro: Die wilde Geschichte einer Tessiner Goldmine und des Schweizer Extraktivismus im 19. und 20. Jahrhundert</h3>
+
+              <p>
+                Ausgangspunkt war die gemeinsame Erschliessung am historischen
+                Quellenbestand zur Mines de Costano S.A. Im Zentrum standen
+                Quellenrecherche, Archivarbeit, Digitalisierung und die Frage,
+                wie sich heterogene historische Dokumente für eine spätere
+                digitale Analyse erschliessen lassen. Der Höhepunkt war eine mehrtägigen Exkursion
+                während der Archivmaterialien vor Ort gesichtet, digitalisiert und Umgelagert wurden.
+              </p>
+
+              <div class="workflow-tags" aria-label="Methoden">
+                <span>Archiv</span>
+                <span>Quellenkritik</span>
+                <span>Digitalisierung</span>
+              </div>
+
+              <a
+                class="workflow-link"
+                href="https://vorlesungsverzeichnis.unibas.ch/de/vorlesungsverzeichnis?id=290931"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lehrveranstaltung Universität Basel ↗
+              </a>
+            </article>
+
+            <article class="workflow-foundation-card">
+              <div class="workflow-card-top">
+                <span class="workflow-step-number">02</span>
+                <span class="workflow-type">Forschungsseminar</span>
+              </div>
+
+              <h3>Miniera d’Oro. Die wilde Geschichte einer Tessiner Goldmine im 20. Jahrhundert (Auswertungen)</h3>
+
+              <p>
+                Im zweiten Semester verschob sich der Schwerpunkt von der
+                Erschliessung zur Auswertung. Die digitalisierten Quellen
+                wurden über eine API von LLM transkribiert, übersetzt, zusammengefasst und mit Schlagwörtern versehen. Der Quellen- und
+                Literaturbestand wurde in einer geteilten Zotero-Datenbank aufgebaut und
+                strukturiert. Damit entstand eine erste organisierte
+                Forschungsinfrastruktur für das weitere Projekt.
+              </p>
+
+              <div class="workflow-tags" aria-label="Methoden">
+                <span>Datenauswertung</span>
+                <span>Zotero</span>
+                <span>Quellenkorpus</span>
+              </div>
+
+              <a
+                class="workflow-link"
+                href="https://vorlesungsverzeichnis.unibas.ch/de/vorlesungsverzeichnis?id=295418"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lehrveranstaltung Universität Basel ↗
+              </a>
+            </article>
+
+            <article class="workflow-foundation-card">
+              <div class="workflow-card-top">
+                <span class="workflow-step-number">03</span>
+                <span class="workflow-type">Praxis</span>
+              </div>
+
+              <h3>Praktikum bei RISE - Humanities Data Benchmark, Coding & JSON</h3>
+
+              <p>
+                Im Praktikum bei RISE lernte ich die gegenwärtigen Möglichkeiten 
+                digitaler Forschungsansätze in den Humanities kennen.
+                Ich lernte, wie historische Dokumente in einen reproduzierbaren Datenworkflow überführt
+                und digital Präsentiert werden.
+                Aus Generalversammlungsunterlagen entstand ein Datensatz für
+                den Humanities Data Benchmark: Informationen wie Namen,
+                Adressen, Aktienbestände und weitere tabellarische Angaben
+                wurden in strukturierte, maschinenlesbare Daten überführt.
+              </p>
+
+              <div class="workflow-mini-flow" aria-label="Datenworkflow">
+                <span>Quelle</span>
+                <b aria-hidden="true">→</b>
+                <span>Extraktion</span>
+                <b aria-hidden="true">→</b>
+                <span>JSON</span>
+              </div>
+
+              <a
+                class="workflow-link"
+                href="https://rise-services.rise.unibas.ch/benchmarks/p/benchmarks/general_meeting_minutes/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Humanities Data Benchmark ↗
+              </a>
+            </article>
+
+            <article class="workflow-foundation-card">
+              <div class="workflow-card-top">
+                <span class="workflow-step-number">04</span>
+                <span class="workflow-type">Seminar</span>
+              </div>
+
+              <h3>Seminar: Geschäftsakten mit GPT und TEI digital aufbereiten und analysieren - Digitale Aufbereitung und Analyse</h3>
+
+              <p>
+                Das Seminar vertiefte Fragen der strukturierten
+                Aufbereitung historischer Geschäftsakten. Datenmodellierung,
+                maschinenlesbare Repräsentationen und KI-gestützte Verfahren
+                bildeten den methodischen Übergang von einzelnen Dokumenten zu
+                analysierbaren historischen Forschungsdaten. Hier entstand mein Interesse
+                an einer eigenen Forschungsarbeit, die die historischen Aktionärsdaten 
+                der Mines de Costano S.A. in den Mittelpunkt stellt und dabei einen Schwerpunkt 
+                auf Visualisierung, Exploration und digitale Präsentation legt.
+              </p>
+
+              <div class="workflow-tags" aria-label="Methoden">
+                <span>Datenmodellierung</span>
+                <span>GPT</span>
+                <span>TEI / strukturierte Daten</span>
+              </div>
+
+              <a
+                class="workflow-link"
+                href="https://vorlesungsverzeichnis.unibas.ch/de/vorlesungsverzeichnis?id=297732"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lehrveranstaltung Universität Basel ↗
+              </a>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="workflow-transition" aria-hidden="true">
+          <span></span>
+          <div>
+            <small>Methodentransfer</small>
+            <strong>Aus der gemeinsamen Vorarbeit entsteht ein eigenes Forschungsprojekt</strong>
+          </div>
+          <span></span>
+        </div>
+
+        <div class="workflow-phase workflow-phase-project">
+          <div class="workflow-phase-label">
+            <span class="workflow-phase-number">II</span>
+            <div>
+              <p class="research-kicker">Eigenes Forschungsprojekt</p>
+              <h3>Von den Aktionärsdaten zur webbasierten Exploration</h3>
+            </div>
+          </div>
+
+          <div class="workflow-question">
+            <span>Leitidee</span>
+            <p>
+              Wie lassen sich die in den Generalversammlungsakten enthaltenen
+              Aktionärsdaten so strukturieren, dass Veränderungen von
+              <strong>Personen, Aktienbesitz und Wohnorten über die Zeit</strong>
+              analysiert und zugleich öffentlich explorierbar gemacht werden?
+            </p>
+          </div>
+
+          <div class="workflow-pipeline">
+
+            <details class="workflow-step" open>
+              <summary>
+                <span class="workflow-step-number">05</span>
+                <span class="workflow-step-summary">
+                  <small>Quellenkorpus</small>
+                  <strong>Geeignete Quellen für die Datenanalyse auswählen</strong>
+                </span>
+                <span class="workflow-expand" aria-hidden="true">+</span>
+              </summary>
+              <div class="workflow-step-body">
+                <p>
+                  Grundlage des Datensets bilden die im Rahmen der Forschungsseminare erschlossenen Generalversammlungsunterlagen. Nach ihrer Sichtung, Digitalisierung sowie ersten Transkription und Übersetzung standen sie als gut zugänglicher Quellenbestand für die weitere Bearbeitung zur Verfügung. Für das eigene Forschungsprojekt wurden gezielt die tabellarisch aufgebauten Aktionärslisten ausgewählt, da sie klar strukturierte Angaben zu Personen beziehungsweise Firmen, Wohnorten sowie Aktien Ordinaires und Aktien Priorité enthalten. Gerade diese wiederkehrenden und vergleichbaren Kategorien bieten gute Voraussetzungen für eine räumliche und zeitliche Visualisierung und machen den Bestand zu einem geeigneten, überschaubaren Datenset für eine kleinere digitale Forschungsarbeit. Die Informationen waren zu diesem Zeitpunkt zwar digital verfügbar, lagen jedoch noch nicht in einer strukturierten, maschinenlesbaren Form vor.
+                </p>
+                <div
+                  class="workflow-data-strip"
+                  aria-label="Generalversammlungen im Quellenkorpus"
+                >
+                  <button type="button" class="workflow-year-link" data-gv-year="1951">
+                    <span>1951</span>
+                    <small>Quelle öffnen</small>
+                  </button>
+
+                  <button type="button" class="workflow-year-link" data-gv-year="1961">
+                    <span>1961</span>
+                    <small>Quelle öffnen</small>
+                  </button>
+
+                  <button type="button" class="workflow-year-link" data-gv-year="1962">
+                    <span>1962</span>
+                    <small>Quelle öffnen</small>
+                  </button>
+
+                  <button type="button" class="workflow-year-link" data-gv-year="1965">
+                    <span>1965</span>
+                    <small>Quelle öffnen</small>
+                  </button>
+
+                  <button type="button" class="workflow-year-link" data-gv-year="1967">
+                    <span>1967</span>
+                    <small>Quelle öffnen</small>
+                  </button>
+
+                  <button type="button" class="workflow-year-link" data-gv-year="1968">
+                    <span>1968</span>
+                    <small>Quelle öffnen</small>
+                  </button>
+
+                  <button type="button" class="workflow-year-link" data-gv-year="1969">
+                    <span>1969</span>
+                    <small>Quelle öffnen</small>
+                  </button>
+                </div>
+
+                <p
+                  id="workflowYearMessage"
+                  class="workflow-year-message hidden"
+                  role="status"
+                ></p>
+              </div>
+            </details>
+
+            <details class="workflow-step">
+              <summary>
+                <span class="workflow-step-number">06</span>
+                <span class="workflow-step-summary">
+                  <small>Datenextraktion</small>
+                  <strong>Historische Tabellen in strukturierte JSON-Daten überführen</strong>
+                </span>
+                <span class="workflow-expand" aria-hidden="true">+</span>
+              </summary>
+              <div class="workflow-step-body">
+                <p>
+                    Die tabellarischen Angaben der historischen
+                    Generalversammlungsunterlagen wurden in ein einheitliches
+                    JSON-Schema überführt. Erfasst wurden unter anderem Namen,
+                    Adressen, Aktien Ordinaires und Aktien Priorité sowie
+                    Informationen zum jeweiligen Dokument und zur Seite.
+
+                    Die strukturierte JSON-Datei diente anschliessend nicht nur
+                    als Grundlage für die weitere Datenbereinigung und Analyse,
+                    sondern wurde auch für den Humanities Data Benchmark von
+                    RISE verwendet. Der Benchmark ermöglicht es, verschiedene
+                    Large Language Models mit denselben historischen Dokumenten
+                    und einem definierten Zielschema zu testen und ihre Ergebnisse
+                    systematisch miteinander zu vergleichen.
+
+                    Damit entstand aus der Datenextraktion eine zusätzliche
+                    methodische Fragestellung: Welche LLMs liefern bei der
+                    automatisierten Transkription und strukturierten Extraktion
+                    historischer Generalversammlungsunterlagen die zuverlässigsten
+                    Ergebnisse? Die manuell kontrollierten JSON-Daten fungieren
+                    dabei als Referenzdatensatz, anhand dessen die Modelloutputs
+                    hinsichtlich Vollständigkeit und Genauigkeit verglichen
+                    werden können. Die Erstellung des Datensatzes bildet somit
+                    zugleich einen Arbeitsschritt des eigenen Forschungsprojekts
+                    und die Grundlage für eine Untersuchung der Leistungsfähigkeit
+                    aktueller KI-Modelle bei der Verarbeitung historischer Quellen.
+                </p>
+                <div class="workflow-schema">
+                  <code>name</code><code>address</code><code>actions_o</code>
+                  <code>actions_p</code><code>document</code><code>page_number</code>
+                </div>
+
+                <div id="benchmarkSourceExample" class="benchmark-example">
+                  <div class="benchmark-example-heading">
+                    <div>
+                      <small>Konkretes Beispiel</small>
+                      <h4>Von der historischen Tabelle zur strukturierten Referenz</h4>
+                    </div>
+                    <p>
+                      Dieselbe Quellenseite wird in zwei Formen gegenübergestellt:
+                      links als historisches Dokument, rechts als maschinenlesbare
+                      JSON-Struktur.
+                    </p>
+                  </div>
+
+                  <div class="benchmark-example-grid">
+                    <figure class="benchmark-source-card">
+                      <div class="benchmark-card-label">
+                        <span>01</span>
+                        <div>
+                          <small>Eingabe</small>
+                          <strong>Historische Originalquelle</strong>
+                        </div>
+                      </div>
+
+                      <a
+                        class="benchmark-image-link"
+                        href="assets/workflow/Se_18_Bilanz1967_page_4.webp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Originalquelle in voller Grösse öffnen"
+                      >
+                        <img
+                          src="assets/workflow/Se_18_Bilanz1967_page_4.webp"
+                          alt="Historische Aktionärsliste einer Generalversammlung mit Namen, Wohnorten, Aktienbeständen und Stimmen."
+                          loading="lazy"
+                        />
+                        <span>Quelle vergrössern ↗</span>
+                      </a>
+
+                      <figcaption>
+                        Generalversammlungsunterlage, Seite 4. Die Tabelle enthält
+                        Aktionär*innen beziehungsweise Firmen, Wohnorte, Aktien
+                        Ordinaires, Aktien Priorité und Stimmen.
+                      </figcaption>
+                    </figure>
+
+                    <figure class="benchmark-json-card">
+                      <div class="benchmark-card-label">
+                        <span>02</span>
+                        <div>
+                          <small>Referenzdaten</small>
+                          <strong>Strukturierte JSON-Datei</strong>
+                        </div>
+                      </div>
+
+                      <pre class="benchmark-json-preview" aria-label="Strukturierte JSON-Referenzdaten"><code>{
+  &quot;document&quot;: &quot;Se_18_Bilanz1967_page_4&quot;,
+  &quot;page_number&quot;: 4,
+  &quot;entries&quot;: [
+    {
+      &quot;number&quot;: &quot;1&quot;,
+      &quot;name&quot;: &quot;Mr Alain BREHAM &quot;,
+      &quot;address&quot;: &quot;(Cabinet D. FEAU -\n 132 Boulevard Haussmann - 75 / PARIS 8&quot;,
+      &quot;actions_o&quot;: &quot;179&quot;,
+      &quot;actions_p&quot;: &quot;520&quot;,
+      &quot;no_de_voix&quot;: &quot;699&quot;,
+      &quot;signature_present&quot;: false,
+      &quot;signature&quot;: &quot;&quot;
+    },
+    {
+      &quot;number&quot;: &quot;2&quot;,
+      &quot;name&quot;: &quot;Mr Marc BREHAM&quot;,
+      &quot;address&quot;: &quot; - La Tuilerie - 78/St-Nom la Bretèche&quot;,
+      &quot;actions_o&quot;: &quot;179&quot;,
+      &quot;actions_p&quot;: &quot;520&quot;,
+      &quot;no_de_voix&quot;: &quot;699&quot;,
+      &quot;signature_present&quot;: false,
+      &quot;signature&quot;: &quot;&quot;
+    },
+    {
+      &quot;number&quot;: &quot;3&quot;,
+      &quot;name&quot;: &quot;COMPAGNIE CENTRALE SICLI&quot;,
+      &quot;address&quot;: &quot;II bis rue Balzac - 75 / PARIS 8e&quot;,
+      &quot;actions_o&quot;: &quot;168&quot;,
+      &quot;actions_p&quot;: &quot;822&quot;,
+      &quot;no_de_voix&quot;: &quot;990&quot;,
+      &quot;signature_present&quot;: false,
+      &quot;signature&quot;: &quot;&quot;
+    },
+    {
+      &quot;number&quot;: &quot;4&quot;,
+      &quot;name&quot;: &quot;Sté DES MINES DE L&#x27;AURIERAS&quot;,
+      &quot;address&quot;: &quot;II bis rue Balzac - 75 / PARIS 8e&quot;,
+      &quot;actions_o&quot;: &quot;45&quot;,
+      &quot;actions_p&quot;: &quot;355&quot;,
+      &quot;no_de_voix&quot;: &quot;400&quot;,
+      &quot;signature_present&quot;: false,
+      &quot;signature&quot;: &quot;&quot;
+    },
+    {
+      &quot;number&quot;: &quot;5&quot;,
+      &quot;name&quot;: &quot;Sté de RECHERCHES MINIERES FRANCAISES&quot;,
+      &quot;address&quot;: &quot;II bis rue Balzac - 75 / PARIS 8e&quot;,
+      &quot;actions_o&quot;: &quot;10&quot;,
+      &quot;actions_p&quot;: &quot;&quot;,
+      &quot;no_de_voix&quot;: &quot;10&quot;,
+      &quot;signature_present&quot;: false,
+      &quot;signature&quot;: &quot;&quot;
+    },
+    {
+      &quot;number&quot;: &quot;6&quot;,
+      &quot;name&quot;: &quot;Mr PANI Antonio&quot;,
+      &quot;address&quot;: &quot;SESSA (Tessin) Suisse&quot;,
+      &quot;actions_o&quot;: &quot;10&quot;,
+      &quot;actions_p&quot;: &quot;&quot;,
+      &quot;no_de_voix&quot;: &quot;10&quot;,
+      &quot;signature_present&quot;: false,
+      &quot;signature&quot;: &quot;&quot;
+    },
+    {
+      &quot;number&quot;: &quot;7&quot;,
+      &quot;name&quot;: &quot;Mr MASSON Daniel&quot;,
+      &quot;address&quot;: &quot;- Villa La Cava\n Avenue de la Cava - 06 / CANNES&quot;,
+      &quot;actions_o&quot;: &quot;10&quot;,
+      &quot;actions_p&quot;: &quot;&quot;,
+      &quot;no_de_voix&quot;: &quot;10&quot;,
+      &quot;signature_present&quot;: false,
+      &quot;signature&quot;: &quot;&quot;
+    }
+  ],
+  &quot;total_actions&quot;: {
+    &quot;total_o&quot;: &quot;601&quot;,
+    &quot;total_p&quot;: &quot;2217&quot;,
+    &quot;total_voix&quot;: &quot;2818&quot;
+  }
+}</code></pre>
+
+                      <figcaption class="benchmark-json-caption">
+                        <span>
+                          Manuell kontrollierte Referenzdaten für den Vergleich
+                          mit den Ausgaben verschiedener LLMs.
+                        </span>
+                        <a
+                          href="assets/workflow/Se_18_Bilanz1967_page_4.json"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          JSON-Datei öffnen ↗
+                        </a>
+                      </figcaption>
+                    </figure>
+                  </div>
+
+                  <div class="benchmark-transformation" aria-hidden="true">
+                    <span>historische Quelle</span>
+                    <b>→</b>
+                    <span>strukturierte Extraktion</span>
+                    <b>→</b>
+                    <span>Referenzdatensatz</span>
+                    <b>→</b>
+                    <span>LLM-Benchmark</span>
+                  </div>
+
+                  <section class="benchmark-evaluation" aria-labelledby="benchmarkEvaluationTitle">
+                    <div class="benchmark-evaluation-heading">
+                      <div>
+                        <small>Evaluation der automatisierten Extraktion</small>
+                        <h4 id="benchmarkEvaluationTitle">LLM-Benchmark: Prompt, Resultate und Kontrolle</h4>
+                      </div>
+
+                      <p>
+                        Für alle Modelle wurde dieselbe Extraktionsaufgabe mit
+                        einem definierten Prompt und einem einheitlichen
+                        Ausgabeformat durchgeführt. Dadurch lassen sich die
+                        Modelloutputs direkt mit den manuell kontrollierten
+                        Referenzdaten vergleichen.
+                      </p>
+                    </div>
+
+
+                    <div class="benchmark-prompt-card">
+                      <div class="benchmark-card-label">
+                        <span>03</span>
+                        <div>
+                          <small>Benchmark-Eingabe</small>
+                          <strong>Verwendeter Prompt</strong>
+                        </div>
+                      </div>
+
+                      <pre class="benchmark-prompt"><code>Please extract the metadata according to the given output format.
+Name and Address are in the same table field. Your task is to extract them into separate fields.
+Lose any dashes between name and address but preserve linebreaks.
+Be aware: Addresses may contain multiple dashes; preserve them, only remove "visual splitting characters" between name and address.
+Filename: {filename}
+Page: {page_number}</code></pre>
+
+                      <p class="benchmark-prompt-note">
+                        Der Prompt definiert sowohl die gewünschte
+                        Strukturierung von Name und Adresse als auch den Umgang
+                        mit typografischen Trennzeichen und Zeilenumbrüchen.
+                        Damit wird eine möglichst konsistente Extraktion über
+                        unterschiedliche Modelle hinweg angestrebt.
+                      </p>
+                    </div>
+
+
+                    <div class="benchmark-results-grid">
+                      <figure class="benchmark-result-card">
+                        <div class="benchmark-card-label">
+                          <span>04</span>
+                          <div>
+                            <small>Gesamtvergleich</small>
+                            <strong>Resultate aller getesteten LLMs</strong>
+                          </div>
+                        </div>
+
+                        <a
+                          class="benchmark-result-image-link"
+                          href="assets/workflow/benchmark_llm_all_results.png"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="Benchmark-Grafik in voller Grösse öffnen"
+                        >
+                          <img
+                            src="assets/workflow/benchmark_llm_all_results.png"
+                            alt="Zeitliche Übersicht der normalisierten Benchmark-Scores aller getesteten Large Language Models."
+                            loading="lazy"
+                          />
+                          <span>Grafik vergrössern ↗</span>
+                        </a>
+
+                        <figcaption>
+                          Die Resultate zeigen deutliche Leistungsunterschiede
+                          zwischen den getesteten Modellen und Modellversionen.
+                          Während ein Teil der Ergebnisse klar tiefer liegt,
+                          konzentrieren sich viele der leistungsstärkeren
+                          Modelle im oberen Bereich der Skala.
+                        </figcaption>
+                      </figure>
+
+
+                      <figure class="benchmark-result-card">
+                        <div class="benchmark-card-label">
+                          <span>05</span>
+                          <div>
+                            <small>Bestplatzierte Modelle</small>
+                            <strong>Top 10 des Benchmarks</strong>
+                          </div>
+                        </div>
+
+                        <a
+                          class="benchmark-result-image-link"
+                          href="assets/workflow/benchmark_llm_top10.png"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="Top-10-Tabelle in voller Grösse öffnen"
+                        >
+                          <img
+                            src="assets/workflow/benchmark_llm_top10.png"
+                            alt="Tabelle der zehn bestplatzierten Large Language Models mit normalisierten Benchmark-Scores."
+                            loading="lazy"
+                          />
+                          <span>Tabelle vergrössern ↗</span>
+                        </a>
+
+                        <figcaption>
+                          Mehrere Modelle erreichen einen normalisierten Score
+                          von über 90. Der höchste dargestellte Wert liegt bei
+                          93,69. Damit können leistungsstarke LLMs einen sehr
+                          grossen Teil der strukturierten Referenzdaten korrekt
+                          reproduzieren.
+                        </figcaption>
+                      </figure>
+                    </div>
+
+
+                    <div class="benchmark-interpretation">
+                      <div class="benchmark-interpretation-number" aria-hidden="true">→</div>
+
+                      <div>
+                        <small>Methodische Einordnung</small>
+                        <h5>Hohe Automatisierbarkeit – aber keine automatische Verlässlichkeit</h5>
+
+                        <p>
+                          Der Benchmark zeigt, dass sich die Extraktion
+                          historischer Tabellen mit leistungsstarken LLMs in
+                          hohem Mass automatisieren lässt. Gleichzeitig sind
+                          die Unterschiede zwischen den Modellen beträchtlich
+                          und auch die besten Ergebnisse bleiben fehlerbehaftet.
+                          Für den Forschungsworkflow bedeutet dies: LLMs können
+                          die Transkription und Strukturierung erheblich
+                          beschleunigen, ersetzen aber nicht die händische
+                          Kontrolle der erzeugten Daten.
+                        </p>
+                      </div>
+
+                      <div class="benchmark-interpretation-flow" aria-label="Rolle des LLM-Benchmarks im Forschungsworkflow">
+                        <span>LLM-Extraktion</span>
+                        <b>→</b>
+                        <span>strukturierte JSON-Daten</span>
+                        <b>→</b>
+                        <strong>händische Kontrolle</strong>
+                        <b>→</b>
+                        <span>Referenzdaten</span>
+                      </div>
+                    </div>
+                  </section>
+
+
+                  <div class="benchmark-question">
+                    <span class="benchmark-question-label">Benchmark-Frage</span>
+                    <p>
+                      Welche Large Language Models reproduzieren die in der
+                      historischen Quelle enthaltenen Informationen bei der
+                      automatisierten Transkription und strukturierten Extraktion
+                      am zuverlässigsten?
+                    </p>
+
+                    <a
+                      href="https://rise-services.rise.unibas.ch/benchmarks/p/benchmarks/general_meeting_minutes/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Zum RISE Humanities Data Benchmark ↗
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </details>
+
+            <details class="workflow-step">
+              <summary>
+                <span class="workflow-step-number">07</span>
+
+                <span class="workflow-step-summary">
+                  <small>Datenbereinigung &amp; Entity Resolution</small>
+                  <strong>
+                    Personen und Firmen über mehrere Generalversammlungen hinweg identifizieren
+                  </strong>
+                </span>
+
+                <span class="workflow-expand" aria-hidden="true">+</span>
+              </summary>
+
+              <div class="workflow-step-body">
+
+                <p>
+                  Die einzelnen Generalversammlungen enthalten zunächst voneinander
+                  unabhängige Einträge. Dieselbe Person oder Firma kann dadurch mehrfach
+                  vorkommen und in den Quellen unterschiedlich bezeichnet sein – etwa
+                  durch wechselnde Namensreihenfolgen, Titel, abweichende Schreibweisen
+                  oder Fehler bei Transkription und Extraktion.
+
+                  Würden diese Einträge unverändert übernommen, würden in der Datenbank
+                  mehrere scheinbar unterschiedliche Personen entstehen. Veränderungen
+                  von Aktienbesitz, Wohnort oder Anwesenheit könnten dadurch nicht
+                  zuverlässig über mehrere Generalversammlungen hinweg verfolgt werden.
+
+                  Deshalb wurden die Datensätze bereinigt und die Einträge der verschiedenen
+                  Generalversammlungen miteinander abgeglichen. Ziel war es, jede historische
+                  Person beziehungsweise Firma als eine eindeutige Entität zu modellieren.
+                  Unterschiedliche, aber eindeutig zuordenbare Namensvarianten wurden
+                  zusammengeführt. Bei unsicherer Identifikation blieben Einträge dagegen
+                  bewusst getrennt.
+
+                  In nodegoat entsteht dadurch für jede Person beziehungsweise Firma
+                  <strong>ein einziges Objekt</strong>. Die Informationen aus den einzelnen
+                  Generalversammlungen werden diesem Objekt als datierte Unterobjekte
+                  zugeordnet. So werden aus mehreren voneinander unabhängigen Tabellenzeilen
+                  zusammenhängende historische Entitäten, deren Entwicklung über die Zeit
+                  analysiert und visualisiert werden kann.
+                </p>
+
+                <div
+                  class="workflow-entity-model"
+                  aria-label="Beispiel für Entity Resolution"
+                >
+
+                  <div class="workflow-entity-source">
+                    <small>Einträge in den Quellen</small>
+
+                    <div class="workflow-entity-source-row">
+                      <strong>1951</strong>
+                      <span>Terenzino Pani</span>
+                    </div>
+
+                    <div class="workflow-entity-source-row">
+                      <strong>1961</strong>
+                      <span>Terenzio PANI</span>
+                    </div>
+
+                    <div class="workflow-entity-source-row">
+                      <strong>1967</strong>
+                      <span>Mr Terenzio PANI</span>
+                    </div>
+                  </div>
+
+
+                  <div class="workflow-entity-arrow" aria-hidden="true">
+                    <span>→</span>
+                    <small>Entity Resolution</small>
+                  </div>
+
+
+                  <div class="workflow-entity-nodegoat">
+                    <small>Ein Objekt in nodegoat</small>
+
+                    <div class="workflow-entity-object">
+                      <strong>Terenzio PANI</strong>
+                      <span>Person / Firma</span>
+                    </div>
+
+                    <div class="workflow-entity-subobject">
+                      <strong>1951</strong>
+                      <span>Wohnort · Aktien · Anwesenheit</span>
+                    </div>
+
+                    <div class="workflow-entity-subobject">
+                      <strong>1961</strong>
+                      <span>Wohnort · Aktien · Anwesenheit</span>
+                    </div>
+
+                    <div class="workflow-entity-subobject">
+                      <strong>1967</strong>
+                      <span>Wohnort · Aktien · Anwesenheit</span>
+                    </div>
+                  </div>
+
+                </div>
+
+                <p class="workflow-entity-result">
+                  <strong>Ergebnis:</strong>
+                  Eine Person wird nicht für jede Generalversammlung neu angelegt.
+                  Stattdessen werden mehrere historische Zustände demselben
+                  Personenobjekt zugeordnet. Damit wird die Datenbereinigung zur
+                  Voraussetzung für die anschliessende zeitliche Analyse.
+                </p>
+
+              </div>
+            </details>
+
+            <details class="workflow-step">
+              <summary>
+                <span class="workflow-step-number">08</span>
+                <span class="workflow-step-summary">
+                  <small>Zeitmodell</small>
+                  <strong>Generalversammlungen als historische Snapshots modellieren</strong>
+                </span>
+                <span class="workflow-expand" aria-hidden="true">+</span>
+              </summary>
+              <div class="workflow-step-body">
+                <p>
+                  Wohnort und Aktienbesitz werden nicht als zeitlose
+                  Eigenschaften einer Person behandelt. Für jede
+                  Generalversammlung entsteht ein eigener datierter Snapshot.
+                  So kann sichtbar werden, wann jemand Aktionär*in war, wie
+                  sich der Aktienbesitz veränderte und ob sich der Wohnort
+                  zwischen zwei Versammlungen änderte.
+                </p>
+                <div class="workflow-time-model">
+                  <strong>Person</strong>
+                  <span>1951 → Wohnort + Aktien</span>
+                  <span>1961 → Wohnort + Aktien</span>
+                  <span>1967 → Wohnort + Aktien</span>
+                  <span>…</span>
+                </div>
+              </div>
+            </details>
+
+            <details class="workflow-step">
+              <summary>
+                <span class="workflow-step-number">09</span>
+                <span class="workflow-step-summary">
+                  <small>Forschungsdatenbank</small>
+                  <strong>Datenmodell in nodegoat aufbauen</strong>
+                </span>
+                <span class="workflow-expand" aria-hidden="true">+</span>
+              </summary>
+              <div class="workflow-step-body">
+                <p>
+                  Die bereinigten Daten werden über die nodegoat API in eine
+                  relationale Forschungsumgebung überführt. Personen und
+                  Firmen bilden eine Objektklasse, Generalversammlungen eine
+                  zweite. Datierte Sub-Objects halten Wohnorte und
+                  Aktienbestände fest und machen die historischen Zustände
+                  vergleichbar.
+                </p>
+                <div class="workflow-node-model">
+                  <div>
+                    <small>Objektklasse</small>
+                    <strong>Person / Firma</strong>
+                    <span>Wohnort · Aktien · Zeit</span>
+                  </div>
+                  <b aria-hidden="true">↔</b>
+                  <div>
+                    <small>Objektklasse</small>
+                    <strong>Generalversammlung</strong>
+                    <span>Datum · Quelle · Gesamtsummen</span>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="workflow-step">
+              <summary>
+                <span class="workflow-step-number">10</span>
+                <span class="workflow-step-summary">
+                  <small>Georeferenzierung</small>
+                  <strong>Historische Wohnorte räumlich verorten</strong>
+                </span>
+                <span class="workflow-expand" aria-hidden="true">+</span>
+              </summary>
+              <div class="workflow-step-body">
+                <p>
+                  Historische Adressen werden normalisiert, mit Koordinaten
+                  versehen und als datierte Geometrien in nodegoat gespeichert.
+                  Identische Adressen mit unterschiedlichen historischen
+                  Schreibweisen werden kontrolliert zusammengeführt. Dadurch
+                  lässt sich die räumliche Verteilung der Aktionärschaft über
+                  mehrere Generalversammlungen hinweg untersuchen.
+                </p>
+                <div class="workflow-mini-flow">
+                  <span>historische Adresse</span>
+                  <b aria-hidden="true">→</b>
+                  <span>Prüfung</span>
+                  <b aria-hidden="true">→</b>
+                  <span>Lat / Lon</span>
+                  <b aria-hidden="true">→</b>
+                  <span>Karte</span>
+                </div>
+              </div>
+            </details>
+
+            <details class="workflow-step">
+              <summary>
+                <span class="workflow-step-number">11</span>
+                <span class="workflow-step-summary">
+                  <small>Analyse &amp; Visualisierung</small>
+                  <strong>Raum, Zeit und Besitzverhältnisse vergleichend untersuchen</strong>
+                </span>
+                <span class="workflow-expand" aria-hidden="true">+</span>
+              </summary>
+
+              <div class="workflow-step-body">
+                <p>
+                  Die Visualisierung bildet eine eigene analytische Ebene des
+                  Projekts. Die geografischen Funktionen von nodegoat werden
+                  für die räumliche Untersuchung der historischen Wohnorte
+                  genutzt. Für den Vergleich der Generalversammlungen und der
+                  Aktienverhältnisse werden die Daten zusätzlich über die
+                  eigene Weboberfläche ausgewertet. Dadurch lassen sich
+                  räumliche Veränderungen, die Zusammensetzung der Aktien,
+                  die Konzentration von Besitz sowie die Entwicklung einzelner
+                  Personen und Firmen miteinander verbinden.
+                </p>
+
+                <div class="workflow-analysis-methods">
+
+                  <article class="workflow-analysis-method">
+                    <span class="workflow-analysis-method-number">01</span>
+                    <div>
+                      <small>Räumliche Ebene</small>
+                      <h4>Historische Wohnorte</h4>
+                      <p>
+                        Die in nodegoat gespeicherten Georeferenzen werden in
+                        die Website exportiert und mit Leaflet kartiert. Neben
+                        der Verteilung pro Generalversammlung können auf den
+                        Personenprofilen mehrere dokumentierte Wohnorte über
+                        die Zeit miteinander verglichen werden.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="workflow-analysis-method">
+                    <span class="workflow-analysis-method-number">02</span>
+                    <div>
+                      <small>Generalversammlungen</small>
+                      <h4>Aktienstruktur nach Aktienart</h4>
+                      <p>
+                        Ein gestapeltes Balkendiagramm vergleicht für jede
+                        Generalversammlung Aktien Ordinaires und Aktien
+                        Priorité. Als Referenz dienen die expliziten
+                        Gesamtsummen der jeweiligen GV-Objekte in nodegoat,
+                        sodass die Veränderung der Aktienstruktur über die
+                        Jahre direkt sichtbar wird.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="workflow-analysis-method">
+                    <span class="workflow-analysis-method-number">03</span>
+                    <div>
+                      <small>Besitzkonzentration</small>
+                      <h4>Grösster Bestand, Top 3 und Top 5</h4>
+                      <p>
+                        Für jede Generalversammlung werden die dokumentierten
+                        Aktienbestände absteigend sortiert. Anschliessend wird
+                        berechnet, welchen prozentualen Anteil der grösste
+                        Bestand sowie die Top 3 und Top 5 am dokumentierten
+                        Gesamtbestand halten. Die Detailansicht nennt zugleich
+                        die beteiligten Personen beziehungsweise Firmen und
+                        ihre absoluten Aktienbestände.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="workflow-analysis-method">
+                    <span class="workflow-analysis-method-number">04</span>
+                    <div>
+                      <small>Akteur*innen im Längsschnitt</small>
+                      <h4>Individuelle Aktienentwicklung</h4>
+                      <p>
+                        Über die stabilen nodegoat-Objekt-IDs werden die
+                        datierten Aktien-Snapshots einer Person oder Firma über
+                        mehrere Generalversammlungen verbunden. Fehlende
+                        Erwähnungen werden dabei bewusst als Datenlücke und
+                        nicht als Aktienbestand von null dargestellt.
+                      </p>
+                    </div>
+                  </article>
+
+                </div>
+
+                <div class="workflow-visualisation-technical">
+                  <div class="workflow-visualisation-technical-head">
+                    <small>Technische Umsetzung</small>
+                    <strong>Von nodegoat zur interaktiven Grafik</strong>
+                  </div>
+
+                  <p>
+                    Die Diagramme beruhen nicht auf separat von Hand
+                    gepflegten Grafikdaten. Der Python-Exporter überführt die
+                    relevanten nodegoat-Daten in <code>data/site-data.json</code>.
+                    Beim Laden der Website liest <code>app.js</code> diese
+                    Datei ein, gruppiert die historischen Snapshots nach
+                    Generalversammlung beziehungsweise stabiler Objekt-ID und
+                    berechnet daraus die benötigten Kennzahlen. Chart.js
+                    rendert die Balken- und Liniendiagramme anschliessend
+                    direkt im Browser.
+                  </p>
+
+                  <div class="workflow-mini-flow workflow-visualisation-flow">
+                    <span>nodegoat</span>
+                    <b aria-hidden="true">→</b>
+                    <span>Python-Export</span>
+                    <b aria-hidden="true">→</b>
+                    <span>site-data.json</span>
+                    <b aria-hidden="true">→</b>
+                    <span>JavaScript-Berechnung</span>
+                    <b aria-hidden="true">→</b>
+                    <span>Chart.js / Leaflet</span>
+                  </div>
+                </div>
+
+                <div class="workflow-visualisation-quality">
+                  <small>Datenqualität</small>
+                  <p>
+                    Die Visualisierungen enthalten zugleich einfache
+                    Plausibilitätsprüfungen. Ein einzelner Aktienbestand, der
+                    grösser als der dokumentierte Gesamtbestand derselben
+                    Generalversammlung ist, wird nicht automatisch korrigiert
+                    oder interpretiert, sondern aus der quantitativen
+                    Berechnung ausgeschlossen und als auffälliger Wert
+                    ausgewiesen. Unsicherheiten der Quelle bleiben damit
+                    sichtbar und müssen weiterhin historisch geprüft werden.
+                  </p>
+                </div>
+
+                <div class="workflow-analysis-grid">
+                  <span>Leaflet-Karten</span>
+                  <span>Aktienarten</span>
+                  <span>Besitzkonzentration</span>
+                  <span>Akteur*innen über die Zeit</span>
+                  <span>Datenqualitätsprüfung</span>
+                </div>
+              </div>
+            </details>
+
+            <details class="workflow-step">
+              <summary>
+                <span class="workflow-step-number">12</span>
+                <span class="workflow-step-summary">
+                  <small>Publikation &amp; Reproduzierbarkeit</small>
+                  <strong>Die Forschungsumgebung als nachvollziehbares GitHub-Repository bereitstellen</strong>
+                </span>
+                <span class="workflow-expand" aria-hidden="true">+</span>
+              </summary>
+
+              <div class="workflow-step-body">
+                <p>
+                  Die abschliessende Webpräsentation verbindet strukturierte
+                  Forschungsdaten, historische Originalquellen und räumliche
+                  sowie quantitative Visualisierungen in einer kuratierten
+                  Benutzeroberfläche. Besucher*innen können
+                  Generalversammlungen, Personen, Aktienbestände und
+                  historische Wohnorte explorieren und zugleich direkt
+                  zwischen Originalquelle und strukturierter
+                  JSON-Repräsentation wechseln. Leaflet, Panoramax, Chart.js,
+                  OpenSeadragon/IIIF und das öffentliche nodegoat-Interface
+                  eröffnen dabei unterschiedliche Zugänge auf denselben
+                  Forschungsgegenstand.
+                </p>
+
+                <div class="workflow-publication-repro">
+                  <div class="workflow-publication-repro-head">
+                    <small>Abgabe &amp; Nachvollziehbarkeit</small>
+                    <h4>Lokale Webpublikation über ein GitHub-Repository</h4>
+                  </div>
+
+                  <p>
+                    Für die Abgabe wird die Webanwendung als statisches
+                    GitHub-Repository bereitgestellt. Das Repository enthält
+                    nicht nur HTML, CSS und JavaScript, sondern auch den
+                    exportierten Forschungsstand in
+                    <code>data/site-data.json</code>, die zugehörigen
+                    JSON-Quelldaten und die vorab erzeugte statische
+                    IIIF-Struktur. Dadurch kann die veröffentlichte
+                    Forschungsansicht ohne erneuten Zugriff auf die
+                    geschützte nodegoat-API reproduziert werden.
+                  </p>
+
+                  <div class="workflow-publication-principles">
+                    <article>
+                      <span>01</span>
+                      <div>
+                        <small>Ansicht</small>
+                        <strong>Fertiger Forschungsstand im Repository</strong>
+                        <p>
+                          Zum Betrachten der Website sind weder API-Token noch
+                          ein Datenbankzugriff oder eine erneute
+                          Bildverarbeitung notwendig.
+                        </p>
+                      </div>
+                    </article>
+
+                    <article>
+                      <span>02</span>
+                      <div>
+                        <small>Plattformunabhängig</small>
+                        <strong>Windows und macOS</strong>
+                        <p>
+                          Ein kleines Python-Skript startet auf beiden
+                          Betriebssystemen einen lokalen HTTP-Server auf
+                          <code>localhost:8000</code>. Zusätzliche
+                          Python-Pakete werden dafür nicht benötigt.
+                        </p>
+                      </div>
+                    </article>
+
+                    <article>
+                      <span>03</span>
+                      <div>
+                        <small>Reproduzierbarkeit</small>
+                        <strong>Ansicht und Neuerzeugung getrennt</strong>
+                        <p>
+                          Die Skripte für nodegoat-Export und IIIF-Erzeugung
+                          bleiben dokumentiert, sind aber nicht Voraussetzung
+                          für die Nutzung der abgegebenen Website.
+                        </p>
+                      </div>
+                    </article>
+
+                    <article>
+                      <span>04</span>
+                      <div>
+                        <small>Versionierung</small>
+                        <strong>Git-Commit und Abgabe-Tag</strong>
+                        <p>
+                          Die eingereichte Version wird über einen festen
+                          Commit beziehungsweise ein Release-Tag referenziert,
+                          sodass spätere Änderungen den abgegebenen
+                          Forschungsstand nicht überschreiben.
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+
+                  <div class="workflow-mini-flow workflow-github-flow">
+                    <span>GitHub-Repository</span>
+                    <b aria-hidden="true">→</b>
+                    <span>Download / Clone</span>
+                    <b aria-hidden="true">→</b>
+                    <span>start_server.py</span>
+                    <b aria-hidden="true">→</b>
+                    <span>localhost:8000</span>
+                    <b aria-hidden="true">→</b>
+                    <strong>reproduzierbare Webansicht</strong>
+                  </div>
+
+                  <div class="workflow-publication-note">
+                    <strong>Bewusste Trennung:</strong>
+                    <span>
+                      Die lokale Webansicht ist statisch und benötigt keine
+                      Zugangsdaten. Die Neuerzeugung der Forschungsdaten aus
+                      nodegoat bleibt dagegen ein separater, dokumentierter
+                      Entwicklungsschritt.
+                    </span>
+                  </div>
+                </div>
+
+                <div class="workflow-output">
+                  <span>GitHub</span>
+                  <span>nodegoat</span>
+                  <span>IIIF</span>
+                  <span>OpenSeadragon</span>
+                  <span>Leaflet</span>
+                  <span>Chart.js</span>
+                  <span>Panoramax</span>
+                  <strong>reproduzierbare Webpublikation</strong>
+                </div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <div class="workflow-transition workflow-transition-tools" aria-hidden="true">
+          <span></span>
+          <div>
+            <small>Digitale Forschungsinfrastruktur</small>
+            <strong>Werkzeuge werden nach Funktion, Offenheit und Interoperabilität ausgewählt</strong>
+          </div>
+          <span></span>
+        </div>
+
+        <div class="workflow-phase workflow-phase-tools">
+          <div class="workflow-phase-label">
+            <span class="workflow-phase-number">III</span>
+            <div>
+              <p class="research-kicker">Werkzeugwahl &amp; Transparenz</p>
+              <h3>Digitale Forschungsinfrastruktur des Projekts</h3>
+            </div>
+          </div>
+
+          <div class="workflow-open-principle">
+            <div class="workflow-open-principle-label">
+              <span aria-hidden="true">◎</span>
+              <div>
+                <small>Leitprinzip</small>
+                <strong>Offenheit vor Plattformabhängigkeit</strong>
+              </div>
+            </div>
+
+            <div class="workflow-open-principle-copy">
+              <p>
+                Wo immer möglich, werden frei zugängliche, offene und
+                interoperable Werkzeuge und Standards eingesetzt. Diese
+                Entscheidung soll die Nachvollziehbarkeit und
+                Reproduzierbarkeit des Forschungsprozesses fördern, eine
+                langfristige Weiterverwendung der Daten ermöglichen und die
+                Abhängigkeit von einzelnen proprietären Plattformen möglichst
+                gering halten.
+              </p>
+
+              <p>
+                Dabei wird zwischen <strong>Open-Source-Software</strong>,
+                <strong>offenen Standards</strong> und lediglich frei
+                zugänglichen Diensten unterschieden. Proprietäre Werkzeuge
+                werden nicht grundsätzlich ausgeschlossen, müssen aber
+                methodisch begründet und in ihrer Rolle transparent gemacht
+                werden.
+              </p>
+            </div>
+
+            <div class="workflow-open-stack" aria-label="Offene Komponenten des Projekts">
+              <span>nodegoat · AGPLv3</span>
+              <span>Python · Open Source</span>
+              <span>libvips · LGPL</span>
+              <span>IIIF · Open Standard</span>
+              <span>OpenSeadragon · BSD</span>
+              <span>Leaflet · BSD-2</span>
+              <span>Chart.js · MIT</span>
+              <span>Panoramax · Open Source</span>
+            </div>
+          </div>
+
+
+          <div class="workflow-tools-intro">
+            <p>
+              Die Forschungsumgebung basiert nicht auf einer einzelnen
+              Anwendung, sondern auf mehreren spezialisierten Werkzeugen.
+              Jedes übernimmt eine klar definierte Aufgabe. Entscheidend ist
+              deshalb weniger das einzelne Tool als die nachvollziehbare
+              Verbindung zwischen Quelle, Datenmodell, Analyse und
+              Publikation.
+            </p>
+          </div>
+
+
+          <div class="workflow-tools-grid">
+
+            <article class="workflow-tool-card">
+              <div class="workflow-tool-head">
+                <span class="workflow-tool-index">01</span>
+                <div>
+                  <small>Open Source · Forschungsdatenbank</small>
+                  <h4>nodegoat</h4>
+                </div>
+              </div>
+
+              <p>
+                nodegoat bildet die zentrale Forschungsdatenbank des Projekts.
+                Personen und Firmen werden als eindeutige Objekte modelliert;
+                Wohnorte, Aktienbestände und Anwesenheiten werden ihnen als
+                zeitlich verortete Unterobjekte zugeordnet. Über die API
+                können die Daten automatisiert geschrieben, geprüft und für
+                die Webpräsentation wieder exportiert werden.
+              </p>
+
+              <div class="workflow-tool-role">
+                <span>Datenmodell</span>
+                <span>Relationen</span>
+                <span>Zeitlichkeit</span>
+                <span>API</span>
+              </div>
+
+              <p class="workflow-tool-note">
+                <strong>Rolle:</strong>
+                zentrale Referenz für die bereinigten und modellierten
+                Forschungsdaten.
+              </p>
+            </article>
+
+
+            <article class="workflow-tool-card">
+              <div class="workflow-tool-head">
+                <span class="workflow-tool-index">02</span>
+                <div>
+                  <small>Open Standard + Open Source</small>
+                  <h4>IIIF &amp; OpenSeadragon</h4>
+                </div>
+              </div>
+
+              <p>
+                Die historischen Originalbilder werden als statisches
+                IIIF Image API 3 Level 0 bereitgestellt. Mit libvips entstehen
+                aus den Scans Bildpyramiden und standardisierte
+                <code>info.json</code>-Dateien. OpenSeadragon bindet diese
+                Quellen in die Website ein und ermöglicht eine
+                hochauflösende Navigation direkt neben den zugehörigen
+                JSON-Daten.
+              </p>
+
+              <div class="workflow-tool-role">
+                <span>Originalquelle</span>
+                <span>IIIF</span>
+                <span>Deep Zoom</span>
+                <span>Provenienz</span>
+              </div>
+
+              <p class="workflow-tool-note">
+                <strong>Rolle:</strong>
+                standardisierte und interoperable Verbindung zwischen
+                historischer Quelle und strukturierter Repräsentation.
+              </p>
+            </article>
+
+
+            <article class="workflow-tool-card">
+              <div class="workflow-tool-head">
+                <span class="workflow-tool-index">03</span>
+                <div>
+                  <small>Open Source · Datenverarbeitung</small>
+                  <h4>Python &amp; libvips</h4>
+                </div>
+              </div>
+
+              <p>
+                Python verbindet die einzelnen Teile der Forschungsumgebung.
+                Skripte übernehmen wiederkehrende und überprüfbare Aufgaben
+                wie Datenbereinigung, API-Import und -Export,
+                Georeferenzierung, Qualitätskontrollen sowie die Erzeugung
+                der statischen IIIF-Struktur. libvips übernimmt dabei die
+                effiziente Verarbeitung der hochauflösenden Quellenbilder.
+              </p>
+
+              <div class="workflow-tool-role">
+                <span>Transformation</span>
+                <span>Automatisierung</span>
+                <span>Validierung</span>
+                <span>Reproduzierbarkeit</span>
+              </div>
+
+              <p class="workflow-tool-note">
+                <strong>Rolle:</strong>
+                technische Verbindungsschicht zwischen Rohdaten, nodegoat,
+                IIIF und Weboberfläche.
+              </p>
+            </article>
+
+
+            <article class="workflow-tool-card">
+              <div class="workflow-tool-head">
+                <span class="workflow-tool-index">04</span>
+                <div>
+                  <small>Open Source · räumliche Exploration</small>
+                  <h4>Leaflet &amp; Panoramax</h4>
+                </div>
+              </div>
+
+              <p>
+                Leaflet bildet die Grundlage der interaktiven Karten auf der
+                Website. Panoramax ergänzt diese räumliche Perspektive um
+                frei zugängliche georeferenzierte Strassenbilder und stellt
+                damit eine offene Alternative zu proprietären
+                Street-View-Diensten dar.
+              </p>
+
+              <div class="workflow-tool-role">
+                <span>Kartierung</span>
+                <span>Geodaten</span>
+                <span>Street-Level Images</span>
+                <span>Exploration</span>
+              </div>
+
+              <p class="workflow-tool-note">
+                <strong>Rolle:</strong>
+                räumliche Kontextualisierung historischer Wohnorte mit einer
+                möglichst offenen Software- und Dateninfrastruktur.
+              </p>
+            </article>
+
+
+            <article class="workflow-tool-card">
+              <div class="workflow-tool-head">
+                <span class="workflow-tool-index">05</span>
+                <div>
+                  <small>Open Source · quantitative Visualisierung</small>
+                  <h4>Chart.js</h4>
+                </div>
+              </div>
+
+              <p>
+                Chart.js übernimmt die interaktive Darstellung der
+                quantitativen Aktienanalysen in der eigenen Weboberfläche.
+                Die Bibliothek erhält keine separat gepflegten Diagrammdaten,
+                sondern visualisiert Kennzahlen, die beim Laden der Website
+                direkt aus den exportierten Forschungsdaten berechnet werden.
+                Dazu gehören die Verteilung von Ordinaires und Priorité, die
+                Konzentration der Aktienbestände sowie zeitliche Verläufe
+                einzelner Personen und Firmen.
+              </p>
+
+              <div class="workflow-tool-role">
+                <span>Balkendiagramme</span>
+                <span>Zeitreihen</span>
+                <span>Interaktion</span>
+                <span>Besitzanalyse</span>
+              </div>
+
+              <p class="workflow-tool-note">
+                <strong>Rolle:</strong>
+                browserbasierte Visualisierungsschicht für die vergleichende
+                Analyse der Generalversammlungen und Aktienverhältnisse;
+                Chart.js verändert oder speichert selbst keine
+                Forschungsdaten.
+              </p>
+            </article>
+
+
+            <article class="workflow-tool-card workflow-tool-card-wide workflow-tool-card-llm">
+              <div class="workflow-tool-head">
+                <span class="workflow-tool-index">06</span>
+                <div>
+                  <small>Assistives Werkzeug · begründete Ausnahme</small>
+                  <h4>Large Language Models</h4>
+                </div>
+              </div>
+
+              <div class="workflow-tool-wide-copy">
+                <p>
+                  Large Language Models werden im Projekt in unterschiedlichen
+                  Rollen eingesetzt. Einerseits sind sie Gegenstand des
+                  Humanities Data Benchmark und werden bei der automatisierten
+                  Transkription und strukturierten Extraktion historischer
+                  Dokumente verglichen. Andererseits dienen sie als assistive
+                  Werkzeuge bei Programmierung, Fehlersuche, Datenprüfung und
+                  der iterativen Entwicklung der Weboberfläche.
+                </p>
+
+                <p>
+                  Nicht alle dafür eingesetzten Modelle oder Dienste sind
+                  Open Source. Ihre Nutzung wird deshalb bewusst als Ausnahme
+                  vom bevorzugten offenen Werkzeugstack ausgewiesen. Die
+                  dauerhafte Datenhaltung, das Datenmodell, die IIIF-Struktur
+                  und die Weboberfläche bleiben unabhängig von einem
+                  bestimmten LLM-Dienst.
+                </p>
+              </div>
+
+              <div class="workflow-tool-role">
+                <span>Extraktion</span>
+                <span>Code-Assistenz</span>
+                <span>Debugging</span>
+                <span>Iteration</span>
+              </div>
+
+              <p class="workflow-tool-note">
+                <strong>Methodische Grenze:</strong>
+                Modelloutputs und erzeugter Code werden nicht ungeprüft
+                übernommen. Quelleninterpretation, Entity Resolution,
+                Forschungsentscheidungen und abschliessende Validierung
+                verbleiben beim Forschenden.
+              </p>
+            </article>
+
+          </div>
+
+
+          <div class="workflow-tools-architecture" aria-label="Digitale Forschungsinfrastruktur">
+            <div class="workflow-tools-architecture-row">
+              <div class="workflow-tools-architecture-node">
+                <small>Historische Quellen</small>
+                <strong>Scan / IIIF</strong>
+              </div>
+
+              <b aria-hidden="true">→</b>
+
+              <div class="workflow-tools-architecture-node">
+                <small>Strukturierung</small>
+                <strong>JSON / Python</strong>
+              </div>
+
+              <b aria-hidden="true">→</b>
+
+              <div class="workflow-tools-architecture-node">
+                <small>Forschungsdaten</small>
+                <strong>nodegoat</strong>
+              </div>
+
+              <b aria-hidden="true">→</b>
+
+              <div class="workflow-tools-architecture-node">
+                <small>Exploration &amp; Visualisierung</small>
+                <strong>Leaflet / Chart.js / Web</strong>
+              </div>
+            </div>
+
+            <div class="workflow-tools-architecture-assist">
+              <span>LLM-Assistenz</span>
+              <small>
+                punktuelle Unterstützung über mehrere Arbeitsschritte hinweg;
+                keine proprietäre Abhängigkeit der Forschungsdaten
+              </small>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="workflow-result">
+          <p class="research-kicker">Ergebnis</p>
+          <h3>Von der Quelle zur explorierbaren Forschungsumgebung</h3>
+          <p>
+            Der Workflow verbindet Quellenkritik und historische
+            Interpretation mit Datenmodellierung, Programmierung und
+            Visualisierung. Die digitale Darstellung ist damit nicht nur ein
+            Endprodukt, sondern selbst Teil des Forschungsprozesses: Sie macht
+            Beziehungen sichtbar, erlaubt neue Vergleiche und dokumentiert
+            zugleich, wie aus historischen Dokumenten strukturierte
+            Forschungsdaten entstehen.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-next">
+        <div>
+          <p class="label">Weiter zur Exploration</p>
+          <h2>Quellen, Daten und Visualisierungen</h2>
+          <p>
+            Im Quellenkorpus lassen sich die Generalversammlungen,
+            Aktienverhältnisse und Wohnorte der Aktionär*innen erkunden.
+          </p>
+        </div>
+
+        <button id="researchToCorpusButton" type="button">
+          Quellenkorpus öffnen →
+        </button>
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         GRUNDSEITE 2: QUELLENKORPUS UND VISUALISIERUNGEN
+         ========================================================= -->
+    <section id="homeView" class="view hidden">
+
+      <header class="corpus-header">
+        <p class="eyebrow">Quellenkorpus · Visualisierungen</p>
+
+        <h1>Generalversammlungen und Aktionär*innen</h1>
+
+        <p class="lead">
+          Der Quellenkorpus kann aus drei Perspektiven erkundet werden:
+          über die einzelnen Generalversammlungen, über die darin auftretenden
+          Personen und Firmen oder über die Veränderung der dokumentierten
+          Aktienverhältnisse. Alle Zugänge basieren auf denselben historischen
+          Datensätzen und eröffnen unterschiedliche zeitliche, räumliche und
+          relationale Perspektiven.
+        </p>
+      </header>
+
+
+      <div
+        class="corpus-mode-switch"
+        role="group"
+        aria-label="Ansicht des Quellenkorpus wechseln"
+      >
+        <button
+          id="showGvCorpusButton"
+          class="corpus-mode-button active"
+          type="button"
+          aria-pressed="true"
+        >
+          <span>Generalversammlungen</span>
+          <small>Quellen nach Ereignissen</small>
+        </button>
+
+        <button
+          id="showPersonCorpusButton"
+          class="corpus-mode-button"
+          type="button"
+          aria-pressed="false"
+        >
+          <span>Personen &amp; Firmen</span>
+          <small>Akteur*innen über die Zeit</small>
+        </button>
+
+        <button
+          id="showSharesCorpusButton"
+          class="corpus-mode-button"
+          type="button"
+          aria-pressed="false"
+        >
+          <span>Aktienentwicklung</span>
+          <small>Besitzverhältnisse im Vergleich</small>
+        </button>
+      </div>
+
+
+      <!-- GENERALVERSAMMLUNGEN -->
+      <section id="gvCorpusPanel" class="corpus-panel">
+
+        <div class="section-heading corpus-section-heading">
+          <div>
+            <p class="label">Quellenkorpus</p>
+            <h2>Generalversammlungen</h2>
+          </div>
+
+          <div id="corpusSummary" class="quiet"></div>
+        </div>
+
+        <div id="gvCards" class="gv-grid"></div>
+
+      </section>
+
+
+      <!-- PERSONEN / FIRMEN -->
+      <section id="personCorpusPanel" class="corpus-panel hidden">
+
+        <div class="section-heading corpus-section-heading person-corpus-heading">
+          <div>
+            <p class="label">Akteur*innen</p>
+            <h2>Personen &amp; Firmen</h2>
+            <p class="corpus-panel-description">
+              Mehrfachnennungen aus verschiedenen Generalversammlungen werden
+              zu einer Entität zusammengeführt. Ein Profil zeigt alle
+              dokumentierten Auftritte, Aktienbestände und Wohnorte.
+            </p>
+          </div>
+
+          <div class="person-corpus-tools">
+            <div id="personCorpusSummary" class="quiet"></div>
+
+            <label class="search-field person-search-field">
+              <span class="sr-only">Personen und Firmen durchsuchen</span>
+              <input
+                id="personSearch"
+                type="search"
+                placeholder="Name oder Wohnort suchen"
+                autocomplete="off"
+              >
+            </label>
+          </div>
+        </div>
+
+        <div
+          id="personCards"
+          class="person-grid"
+          aria-live="polite"
+        ></div>
+
+        <p id="personEmpty" class="empty-message hidden">
+          Keine passenden Personen oder Firmen gefunden.
+        </p>
+
+      </section>
+
+
+      <!-- AKTIENENTWICKLUNG -->
+      <section id="sharesCorpusPanel" class="corpus-panel hidden">
+
+        <div class="section-heading corpus-section-heading shares-corpus-heading">
+          <div>
+            <p class="label">Zeitliche Analyse</p>
+            <h2>Entwicklung der Aktienverhältnisse</h2>
+            <p class="corpus-panel-description">
+              Die Visualisierungen vergleichen die in den
+              Generalversammlungsunterlagen dokumentierten Aktienbestände
+              über die Zeit. Sie ergänzen die räumlichen Ansichten um eine
+              relationale Perspektive auf Eigentum, Konzentration und
+              Veränderungen einzelner Akteur*innen.
+            </p>
+          </div>
+
+          <div class="shares-open-note">
+            <span>Open Source</span>
+            <strong>Chart.js · MIT</strong>
+          </div>
+        </div>
+
+        <div class="shares-method-note">
+          <strong>Methodischer Hinweis</strong>
+          <p>
+            Die Diagramme bilden die in den jeweiligen Quellen dokumentierten
+            Aktienbestände ab. Wenn eine Person oder Firma in einer
+            Generalversammlung nicht erscheint, wird dies nicht als
+            Aktienbestand von null interpretiert. Fehlende Beobachtungen
+            bleiben deshalb in zeitlichen Verläufen als Lücken sichtbar.
+          </p>
+        </div>
+
+        <div
+          id="sharesDataQuality"
+          class="shares-data-quality hidden"
+          role="status"
+        ></div>
+
+        <div class="shares-dashboard">
+
+          <article class="card shares-chart-card shares-chart-card-wide">
+            <div class="shares-chart-heading">
+              <div>
+                <small>Generalversammlungen im Vergleich</small>
+                <h3>Dokumentierte Aktien nach Aktienart</h3>
+              </div>
+              <p>
+                Ordinaires und Priorité werden pro Generalversammlung
+                gestapelt dargestellt. Dadurch werden sowohl Gesamtumfang
+                als auch Veränderungen im Verhältnis der beiden Aktienarten
+                sichtbar.
+              </p>
+            </div>
+
+            <div class="shares-chart-wrap shares-chart-wrap-wide">
+              <canvas
+                id="sharesTypeChart"
+                aria-label="Gestapeltes Balkendiagramm der dokumentierten Aktien Ordinaires und Priorité pro Generalversammlung"
+              ></canvas>
+            </div>
+          </article>
+
+          <article class="card shares-chart-card">
+            <div class="shares-chart-heading shares-chart-heading-stacked">
+              <div>
+                <small>Eigentumskonzentration</small>
+                <h3>Wie stark konzentrieren sich die Aktien?</h3>
+              </div>
+              <p>
+                Gezeigt wird, welchen Anteil der grösste Aktienbestand sowie
+                die Top 3 und Top 5 an allen in der jeweiligen GV
+                dokumentierten Aktien ausmachen.
+              </p>
+            </div>
+
+            <div class="shares-chart-wrap">
+              <canvas
+                id="sharesConcentrationChart"
+                aria-label="Liniendiagramm zur Konzentration der dokumentierten Aktienbestände"
+              ></canvas>
+            </div>
+
+            <div id="sharesConcentrationDetails" class="shares-concentration-details"></div>
+          </article>
+
+          <article class="card shares-chart-card">
+            <div class="shares-chart-heading shares-chart-heading-stacked">
+              <div>
+                <small>Akteur*innen über die Zeit</small>
+                <h3>Aktienbestand einer Person oder Firma</h3>
+              </div>
+
+              <label class="shares-entity-field">
+                <span>Person / Firma auswählen</span>
+                <select id="sharesEntitySelect"></select>
+              </label>
+            </div>
+
+            <div class="shares-chart-wrap">
+              <canvas
+                id="sharesEntityChart"
+                aria-label="Zeitlicher Verlauf des Aktienbestands einer ausgewählten Person oder Firma"
+              ></canvas>
+            </div>
+
+            <p id="sharesEntityNote" class="shares-entity-note"></p>
+          </article>
+
+        </div>
+
+        <div class="shares-analysis-note">
+          <small>Interpretation</small>
+          <p>
+            Die Visualisierungen machen Veränderungen in der Zusammensetzung,
+            Konzentration und Position einzelner Akteur*innen zwischen den
+            Generalversammlungen sichtbar und schaffen damit einen direkten
+            Ausgangspunkt für die historische Interpretation der
+            Besitzverhältnisse.
+          </p>
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <!-- =========================================================
+         GRUNDSEITE 3: NODEGOAT EXPLORER
+         ========================================================= -->
+    <section id="nodegoatView" class="view hidden">
+
+      <header class="corpus-header nodegoat-header">
+        <p class="eyebrow">Datenmodell · Raum · Zeit · Beziehungen</p>
+        <h1>Nodegoat Explorer</h1>
+        <p class="lead">
+          Die Forschungsdaten der Mines de Costano S.A. können hier direkt
+          in ihrer relationalen, räumlichen und zeitlichen Struktur untersucht werden.
+        </p>
+      </header>
+
+      <section class="nodegoat-shell card">
+        <div class="nodegoat-toolbar">
+          <div>
+            <p class="label">Forschungsdatenbank</p>
+            <h2>Interaktive nodegoat-Ansicht</h2>
+          </div>
+          <a class="nodegoat-external-link"
+             href="https://nodegoat.dasch.swiss/viewer.p/21"
+             target="_blank"
+             rel="noopener noreferrer">
+            In nodegoat öffnen ↗
+          </a>
+        </div>
+
+        <div class="nodegoat-frame-wrap">
+          <iframe
+            id="nodegoatFrame"
+            class="nodegoat-frame"
+            src="https://nodegoat.dasch.swiss/viewer.p/21"
+            title="Nodegoat Explorer – Mines de Costano S.A."
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+        </div>
+
+        <div class="nodegoat-fallback">
+          <span>Falls die Einbettung blockiert wird:</span>
+          <a href="https://nodegoat.dasch.swiss/viewer.p/21"
+             target="_blank"
+             rel="noopener noreferrer">
+            Public Interface direkt öffnen ↗
+          </a>
+        </div>
+      </section>
+
+      <section class="method card nodegoat-method">
+        <h3>Nodegoat als Forschungsdatenbank</h3>
+        <p>
+          Personen, Generalversammlungen, Aktienbesitz und historische Wohnorte
+          werden in nodegoat strukturiert verwaltet. Die kuratierten Visualisierungen
+          dieser Website bleiben als eigene Präsentationsebene erhalten.
+        </p>
+      </section>
+
+    </section>
+
+
+    <!-- =========================================================
+         PERSONEN- / FIRMENPROFIL
+         ========================================================= -->
+    <section id="personView" class="view hidden">
+
+      <nav class="breadcrumb detail-breadcrumb">
+        <button id="backPeopleButton" class="text-button" type="button">
+          ← Personen &amp; Firmen
+        </button>
+
+        <button
+          id="backHomeFromPersonButton"
+          class="text-button secondary-link"
+          type="button"
+        >
+          Quellenkorpus
+        </button>
+      </nav>
+
+
+      <header class="person-profile-header">
+
+        <div>
+          <p class="eyebrow">Historische Entität</p>
+          <h1 id="personProfileName">–</h1>
+
+          <p id="personProfileVariants" class="person-variants"></p>
+        </div>
+
+        <div id="personProfilePeriod" class="person-period"></div>
+
+      </header>
+
+
+      <section
+        class="person-profile-stats"
+        aria-label="Kennzahlen zur Person"
+      >
+        <article class="stat-card">
+          <span>Generalversammlungen</span>
+          <strong id="personProfileGvCount">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span>Erster Nachweis</span>
+          <strong id="personProfileFirstYear">–</strong>
+        </article>
+
+        <article class="stat-card">
+          <span>Letzter Nachweis</span>
+          <strong id="personProfileLastYear">–</strong>
+        </article>
+
+        <article class="stat-card">
+          <span>Höchster Aktienbestand</span>
+          <strong id="personProfileMaxShares">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span>Dokumentierte Wohnorte</span>
+          <strong id="personProfileLocationCount">0</strong>
+        </article>
+      </section>
+
+
+      <section class="card person-map-card">
+
+        <div class="section-heading small person-map-heading">
+          <div>
+            <p class="label">Räumlicher Verlauf</p>
+            <h2>Dokumentierte Wohnorte</h2>
+          </div>
+
+          <div id="personMapSummary" class="quiet"></div>
+        </div>
+
+        <p class="map-description">
+          Die Karte zeigt alle georeferenzierten Wohnorte dieser Person
+          beziehungsweise Firma. Derselbe Wohnort wird nur einmal markiert,
+          auch wenn er in mehreren Generalversammlungen vorkommt.
+        </p>
+
+        <div
+          id="personMap"
+          class="person-map"
+          aria-label="Karte der historischen Wohnorte"
+        ></div>
+
+        <p class="map-attribution-note">
+          Kartendaten © OpenStreetMap-Mitwirkende, ODbL.
+          Die Georeferenzen stammen aus dem nodegoat-Datenmodell.
+        </p>
+
+      </section>
+
+
+      <section class="card person-history-card">
+
+        <div class="section-heading small person-history-heading">
+          <div>
+            <p class="label">Zeitlicher Verlauf</p>
+            <h2>Generalversammlungen, Aktien und Wohnorte</h2>
+          </div>
+
+          <p class="person-history-note">
+            Jede Zeile entspricht einem historischen Snapshot aus einer
+            Generalversammlung.
+          </p>
+        </div>
+
+        <div id="personTimeline" class="person-timeline"></div>
+
+      </section>
+
+
+      <section class="method card person-profile-method">
+
+        <h3>Wie dieses Profil entsteht</h3>
+
+        <p>
+          Die Profilansicht fasst diejenigen Einträge zusammen, die bei der
+          Datenbereinigung derselben historischen Person beziehungsweise Firma
+          zugeordnet wurden. Aktienbestand und Wohnort bleiben dabei an die
+          jeweilige Generalversammlung gebunden und werden nicht als zeitlose
+          Eigenschaften interpretiert.
+        </p>
+
+      </section>
+
+    </section>
+
+
+    <!-- =========================================================
+         GV-ÜBERSICHT
+         ========================================================= -->
+    <section id="gvView" class="view hidden">
+
+      <nav class="breadcrumb">
+        <button id="backHomeButton" class="text-button" type="button">
+          ← Quellenkorpus
+        </button>
+      </nav>
+
+      <header class="gv-header">
+        <div>
+          <p class="eyebrow">Generalversammlung</p>
+          <h1 id="gvTitle">–</h1>
+          <p id="gvDate" class="lead compact"></p>
+        </div>
+      </header>
+
+      <section class="stats-grid" aria-label="Kennzahlen zur Generalversammlung">
+
+        <article class="stat-card">
+          <span>Anwesende</span>
+          <strong id="gvAttendance">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span>Ordinaire</span>
+          <strong id="gvActionsO">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span>Priorité</span>
+          <strong id="gvActionsP">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span>Aktien total</span>
+          <strong id="gvActionsTotal">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span>Georeferenziert</span>
+          <strong id="gvGeocoded">0</strong>
+        </article>
+
+      </section>
+
+
+      <section class="card source-card">
+        <div class="section-heading small">
+          <div>
+            <p class="label">Provenienz</p>
+            <h2>Quellen</h2>
+          </div>
+        </div>
+
+        <ul id="gvSources" class="source-list"></ul>
+      </section>
+
+
+      <section class="card source-explorer-card">
+
+        <div class="section-heading small source-explorer-heading">
+          <div>
+            <p class="label">Digitale Quellenansicht</p>
+            <h2>Originalquelle &amp; strukturierte Daten</h2>
+          </div>
+
+          <div id="gvSourceCounter" class="quiet"></div>
+        </div>
+
+        <p class="map-description source-explorer-description">
+          Die historische Originalseite und die daraus erzeugte JSON-Datei
+          werden parallel dargestellt. Der Bildviewer unterstützt IIIF und
+          verwendet lokale Bilddateien als Fallback, wenn kein IIIF-Service
+          hinterlegt ist.
+        </p>
+
+        <div
+          id="gvSourceTabs"
+          class="source-page-tabs"
+          aria-label="Quellenseite auswählen"
+        ></div>
+
+        <div id="gvSourceWorkspace" class="source-workspace">
+
+          <section class="source-viewer-panel">
+            <div class="source-panel-heading">
+              <div>
+                <small>Historische Originalquelle</small>
+                <strong id="gvSourceImageTitle">–</strong>
+              </div>
+
+              <a
+                id="gvSourceImageLink"
+                class="source-external-link hidden"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Bild öffnen ↗
+              </a>
+            </div>
+
+            <div class="source-viewer-wrap">
+              <div
+                id="gvSourceViewer"
+                class="source-iiif-viewer"
+                aria-label="IIIF-fähiger Viewer der historischen Originalquelle"
+              ></div>
+
+              <div
+                id="gvSourceViewerMessage"
+                class="source-viewer-message"
+              >
+                Keine Bildquelle ausgewählt.
+              </div>
+            </div>
+          </section>
+
+
+          <section class="source-json-panel">
+            <div class="source-panel-heading">
+              <div>
+                <small>Maschinenlesbare Daten</small>
+                <strong id="gvSourceJsonTitle">JSON</strong>
+              </div>
+
+              <a
+                id="gvSourceJsonLink"
+                class="source-external-link hidden"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                JSON öffnen ↗
+              </a>
+            </div>
+
+            <pre
+              id="gvSourceJson"
+              class="source-json-viewer"
+              aria-label="JSON-Datei der historischen Quelle"
+            ><code>Keine JSON-Datei ausgewählt.</code></pre>
+          </section>
+
+        </div>
+
+        <div id="gvSourceEmpty" class="source-empty hidden">
+          <strong>Noch keine verknüpften Quelldateien gefunden.</strong>
+          <p>
+            Der Exporter sucht nach den in der GV-Metadatei eingetragenen
+            Quelldateien und ordnet Bild und JSON anhand ihres Dateinamens
+            einander zu.
+          </p>
+        </div>
+
+      </section>
+
+
+      <section class="card map-card">
+
+        <div class="section-heading small map-heading">
+          <div>
+            <p class="label">Räumliche Verteilung</p>
+            <h2>Wohnorte der Aktionär*innen</h2>
+          </div>
+
+          <button id="europeButton" type="button">
+            Europaansicht
+          </button>
+        </div>
+
+        <p class="map-description">
+          Jeder Marker entspricht einem georeferenzierten historischen
+          Wohnort. Nahe beieinanderliegende Punkte werden zu Clustern
+          zusammengefasst. Ein Klick auf einen Marker führt zur Person.
+        </p>
+
+        <div id="gvMap" class="gv-map"></div>
+
+        <p class="map-attribution-note">
+          Kartendaten © OpenStreetMap-Mitwirkende, ODbL.
+          Die Georeferenzen sind nachträgliche Forschungsdaten.
+        </p>
+
+      </section>
+
+
+      <section class="card shareholders-card">
+
+        <div class="section-heading small">
+          <div>
+            <p class="label">Anwesenheitsprotokoll</p>
+            <h2>Aktionär*innen</h2>
+          </div>
+
+          <label class="search-field">
+            <span class="sr-only">Aktionär*innen durchsuchen</span>
+            <input
+              id="shareholderSearch"
+              type="search"
+              placeholder="Name oder Adresse suchen"
+            >
+          </label>
+        </div>
+
+        <div class="table-wrap">
+          <table class="shareholder-table">
+            <thead>
+              <tr>
+                <th>Nr.</th>
+                <th>Name</th>
+                <th>Historische Adresse</th>
+                <th class="number-cell">Ordinaire</th>
+                <th class="number-cell">Priorité</th>
+                <th class="number-cell">Total</th>
+              </tr>
+            </thead>
+
+            <tbody id="shareholderTableBody"></tbody>
+          </table>
+        </div>
+
+        <p id="shareholderEmpty" class="empty-message hidden">
+          Keine passenden Einträge gefunden.
+        </p>
+
+      </section>
+
+    </section>
+
+
+    <!-- =========================================================
+         PERSONEN-DETAILANSICHT
+         ========================================================= -->
+    <section id="detailView" class="view hidden">
+
+      <nav class="breadcrumb detail-breadcrumb">
+
+        <button id="backGvButton" class="text-button" type="button">
+          ← Zur Generalversammlung
+        </button>
+
+        <button id="backHomeFromDetailButton" class="text-button secondary-link" type="button">
+          Quellenkorpus
+        </button>
+
+      </nav>
+
+
+      <header class="detail-header">
+        <div>
+          <p class="eyebrow" id="detailGvLabel">Generalversammlung</p>
+          <h1>Historischer Wohnort</h1>
+        </div>
+
+        <div class="counter" id="counter">– / –</div>
+      </header>
+
+
+      <section class="detail-layout">
+
+        <article class="card metadata">
+
+          <div class="person-header">
+
+            <div>
+              <p class="label">Aktionär*in</p>
+              <h2 id="name">–</h2>
+            </div>
+
+            <span class="quality-badge" id="qualityBadge">–</span>
+
+          </div>
+
+
+          <dl class="details">
+
+            <div>
+              <dt>Historische Adresse</dt>
+              <dd id="historicAddress">–</dd>
+            </div>
+
+            <div>
+              <dt>Normalisierte Suchadresse</dt>
+              <dd id="geocodeAddress">–</dd>
+            </div>
+
+            <div>
+              <dt>Georeferenz</dt>
+              <dd id="coordinates">–</dd>
+            </div>
+
+            <div>
+              <dt>Quelle</dt>
+              <dd id="source">–</dd>
+            </div>
+
+          </dl>
+
+
+          <div class="shares">
+
+            <div>
+              <span>Ordinaire</span>
+              <strong id="actionsO">0</strong>
+            </div>
+
+            <div>
+              <span>Priorité</span>
+              <strong id="actionsP">0</strong>
+            </div>
+
+            <div>
+              <span>Total</span>
+              <strong id="actionsTotal">0</strong>
+            </div>
+
+          </div>
+
+
+          <div class="status-box" id="statusBox"></div>
+
+          <p class="method-note" id="methodNote"></p>
+
+
+          <div class="link-row">
+
+            <a
+              id="osmLink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              OpenStreetMap ↗
+            </a>
+
+            <a
+              id="panoramaxLink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Panoramax ↗
+            </a>
+
+          </div>
+
+
+          <div class="controls">
+
+            <button id="prevButton" type="button">
+              ← Vorherige
+            </button>
+
+            <button id="nextButton" type="button">
+              Nächste →
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <section class="card viewer-card">
+
+          <pnx-viewer
+            id="panoramaxViewer"
+            endpoint="https://api.panoramax.xyz/api"
+            widgets="false"
+            url-parameters="false"
+            keyboard-shortcuts="true"
+            style="width: 100%; height: 100%;"
+          >
+          </pnx-viewer>
+
+          <div id="viewerMessage" class="viewer-message">
+            Wähle einen georeferenzierten Datensatz.
+          </div>
+
+        </section>
+
+      </section>
+
+
+      <section class="method card">
+
+        <h3>Was diese Ansicht zeigt</h3>
+
+        <p>
+          Die historische Adresse stammt aus dem Anwesenheitsprotokoll.
+          Die Georeferenz ist eine nachträgliche Forschungsentscheidung.
+          Panoramax zeigt heutige bzw. jüngere offene Strassenaufnahmen
+          und keine Rekonstruktion des historischen Wohnzustands.
+        </p>
+
+        <p class="attribution">
+          Geokodierung: © OpenStreetMap-Mitwirkende, ODbL ·
+          Strassenbilder: Panoramax, jeweilige Bildlizenz.
+        </p>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <!-- Panoramax -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/@panoramax/web-viewer@5.2.0/build/cjs/index.js"
+  ></script>
+
+  <!-- Leaflet -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <!-- Leaflet MarkerCluster -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"
+  ></script>
+
+  <!-- OpenSeadragon: IIIF-fähiger Quellenviewer -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/openseadragon@4.1.0/build/openseadragon/openseadragon.min.js"
+  ></script>
+
+  <!-- Chart.js: Open-Source-Visualisierung der Aktienentwicklung -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"
+  ></script>
+
+  <!-- Eigene Logik immer zuletzt -->
+  <script src="app.js?v=20260829-shares13"></script>
+
+</body>
+</html>

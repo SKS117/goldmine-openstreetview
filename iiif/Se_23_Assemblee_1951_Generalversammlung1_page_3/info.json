@@ -1,0 +1,20 @@
+{
+  "@context": "http://iiif.io/api/image/3/context.json",
+  "id": "http://localhost:8000/iiif/Se_23_Assemblee_1951_Generalversammlung1_page_3",
+  "type": "ImageService3",
+  "profile": "level0",
+  "protocol": "http://iiif.io/api/image",
+  "tiles": [
+    {
+      "scaleFactors": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "width": 512
+    }
+  ],
+  "width": 2480,
+  "height": 3509
+}

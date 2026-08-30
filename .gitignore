@@ -1,0 +1,71 @@
+# Betriebssystem / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Secrets / lokale Konfiguration
+.env
+.env.*
+*.pem
+*.key
+*.token
+secrets.*
+secret.*
+
+# Lokale Entwicklungswerkzeuge
+# libvips wird zur Betrachtung der Website NICHT benÃ¶tigt.
+tools/
+
+# Node-AbhÃ¤ngigkeiten, falls lokal getestet
+node_modules/
+
+# TemporÃ¤re Dateien
+*.tmp
+*.log
+
+# WICHTIG:
+# Folgende Forschungsartefakte NICHT ignorieren:
+# data/site-data.json
+# data/RAW/
+# iiif/
+# assets/
+
+# Lokales libvips-Installationsarchiv
+vips-dev-x64-all-*.zip
+
+# ZIP-Pakete und lokale Entwicklungs-Patches
+*.zip
+benchmark_workflow_patch/
+benchmark_patch_assets/
+
+# ---------------------------------------------------------
+# Entwicklungs-Backups und frühere Patch-Versionen
+# ---------------------------------------------------------
+backups/
+benchmark_patch_assets/
+benchmark_workflow_patch/
+
+# Alte Zwischen-READMEs
+README.txt
+README_*.txt
+data/README.txt
+
+# Einmalige Patch-/Entwicklungsskripte
+add_*.py
+inspect_generalversammlung2.py
+
+# Doppelte/alte Exporter
+export_nodegoat_for_web (1).py
+
+# Frühere nodegoat Import-, Audit- und Reparaturskripte
+nodegoat_*.py
+
+# Temporäre nodegoat Analyse-/Importdateien
+data/nodegoat_*
+data/gv2_*
+data/sample.json

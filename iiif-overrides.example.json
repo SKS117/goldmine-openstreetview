@@ -1,0 +1,6 @@
+{
+  "_comment": "Optional: Für echte IIIF Image API Services. Schlüssel = Dateiname/Document-Stem, Wert = info.json URL.",
+  "Se_18_Bilanz1967_page_4": {
+    "info_json": "https://DEIN-IIIF-SERVER.example/iiif/3/IDENTIFIER/info.json"
+  }
+}

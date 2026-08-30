@@ -1,0 +1,27 @@
+{
+  "Se_23_Assemblée_1951_Generalversammlung5_page_20::31": {
+    "query": "Meslières, Doubs, France",
+    "quality": "locality",
+    "note": "Die Quelle nennt nur einen Ort, keine konkrete Hausadresse."
+  },
+  "Se_23_Assemblée_1951_Generalversammlung5_page_20::32": {
+    "query": "11 bis rue Balzac, 75008 Paris, France",
+    "quality": "exact_address",
+    "note": "Adressbestandteile für die Geokodierung normalisiert."
+  },
+  "Se_23_Assemblée_1951_Generalversammlung5_page_20::33": {
+    "query": "112 Boulevard Exelmans, 75016 Paris, France",
+    "quality": "exact_address",
+    "note": "Abkürzung Bd ausgeschrieben; Arrondissement normalisiert."
+  },
+  "Se_23_Assemblée_1951_Generalversammlung5_page_20::34": {
+    "query": "73 rue des Vignes, 75016 Paris, France",
+    "quality": "exact_address",
+    "note": "Fehlerhafte Grad-/Unicode-Notation des Arrondissements normalisiert."
+  },
+  "Se_23_Assemblée_1951_Generalversammlung5_page_20::35": {
+    "query": "148 Avenue Franklin Roosevelt, Bruxelles, Belgique",
+    "quality": "exact_address",
+    "note": "Abkürzung Av. ausgeschrieben."
+  }
+}

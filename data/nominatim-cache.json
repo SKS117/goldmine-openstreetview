@@ -1,0 +1,1768 @@
+{
+  "Meslières, Doubs, France": [
+    {
+      "place_id": 93007754,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 1224838,
+      "lat": "47.4169611",
+      "lon": "6.8886225",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 16,
+      "importance": 0.5618705715036016,
+      "addresstype": "village",
+      "name": "Meslières",
+      "display_name": "Meslières, Montbéliard, Doubs, Bourgogne-Franche-Comté, France métropolitaine, 25310, France",
+      "address": {
+        "village": "Meslières",
+        "municipality": "Montbéliard",
+        "county": "Doubs",
+        "ISO3166-2-lvl6": "FR-25",
+        "state": "Bourgogne-Franche-Comté",
+        "ISO3166-2-lvl4": "FR-BFC",
+        "region": "France métropolitaine",
+        "postcode": "25310",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "47.4118270",
+        "47.4249529",
+        "6.8734409",
+        "6.9137734"
+      ]
+    }
+  ],
+  "11 bis rue Balzac, 75008 Paris, France": [
+    {
+      "place_id": 98240391,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 839872088,
+      "lat": "48.8738634",
+      "lon": "2.3005892",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 9.317235065227768e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "11 bis, Rue Balzac, Quartier du Faubourg-du-Roule, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+      "address": {
+        "house_number": "11 bis",
+        "road": "Rue Balzac",
+        "quarter": "Quartier du Faubourg-du-Roule",
+        "suburb": "Paris 8e Arrondissement",
+        "city_district": "Paris",
+        "city": "Paris",
+        "ISO3166-2-lvl6": "FR-75C",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "75008",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8738134",
+        "48.8739134",
+        "2.3005392",
+        "2.3006392"
+      ]
+    }
+  ],
+  "112 Boulevard Exelmans, 75016 Paris, France": [
+    {
+      "place_id": 97678048,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 1001475582,
+      "lat": "48.8459405",
+      "lon": "2.2588912",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 9.317235065227768e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "112, Boulevard Exelmans, Quartier d'Auteuil, Paris 16e Arrondissement, Paris, Île-de-France, France métropolitaine, 75016, France",
+      "address": {
+        "house_number": "112",
+        "road": "Boulevard Exelmans",
+        "suburb": "Quartier d'Auteuil",
+        "city_district": "Paris",
+        "city": "Paris",
+        "ISO3166-2-lvl6": "FR-75C",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "75016",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8458905",
+        "48.8459905",
+        "2.2588412",
+        "2.2589412"
+      ]
+    }
+  ],
+  "73 rue des Vignes, 75016 Paris, France": [
+    {
+      "place_id": 97922244,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 13246475633,
+      "lat": "48.8569500",
+      "lon": "2.2735596",
+      "category": "shop",
+      "type": "beauty",
+      "place_rank": 30,
+      "importance": 9.317235065227768e-05,
+      "addresstype": "shop",
+      "name": "Les Ongles de Cerise",
+      "display_name": "Les Ongles de Cerise, 73, Rue des Vignes, Quartier de la Muette, Paris 16e Arrondissement, Paris, Île-de-France, France métropolitaine, 75016, France",
+      "address": {
+        "shop": "Les Ongles de Cerise",
+        "house_number": "73",
+        "road": "Rue des Vignes",
+        "city_block": "Quartier de la Muette",
+        "suburb": "Paris 16e Arrondissement",
+        "city_district": "Paris",
+        "city": "Paris",
+        "ISO3166-2-lvl6": "FR-75C",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "75016",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8569000",
+        "48.8570000",
+        "2.2735096",
+        "2.2736096"
+      ]
+    },
+    {
+      "place_id": 98135868,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 1011707776,
+      "lat": "48.8569277",
+      "lon": "2.2736385",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 9.317235065227768e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "73, Rue des Vignes, Quartier de la Muette, Paris 16e Arrondissement, Paris, Île-de-France, France métropolitaine, 75016, France",
+      "address": {
+        "house_number": "73",
+        "road": "Rue des Vignes",
+        "city_block": "Quartier de la Muette",
+        "suburb": "Paris 16e Arrondissement",
+        "city_district": "Paris",
+        "city": "Paris",
+        "ISO3166-2-lvl6": "FR-75C",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "75016",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8568777",
+        "48.8569777",
+        "2.2735885",
+        "2.2736885"
+      ]
+    }
+  ],
+  "148 Avenue Franklin Roosevelt, Bruxelles, Belgique": [
+    {
+      "place_id": 106164870,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 159495396,
+      "lat": "50.8049965",
+      "lon": "4.3871749",
+      "category": "building",
+      "type": "yes",
+      "place_rank": 30,
+      "importance": 7.775463492785561e-05,
+      "addresstype": "building",
+      "name": "",
+      "display_name": "148, Avenue Franklin Roosevelt - Franklin Rooseveltlaan, south extension of Brussels, Bruxelles - Brussel, Brussel-Hoofdstad - Bruxelles-Capitale, Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest, 1050, België / Belgique / Belgien",
+      "address": {
+        "house_number": "148",
+        "road": "Avenue Franklin Roosevelt - Franklin Rooseveltlaan",
+        "neighbourhood": "south extension of Brussels",
+        "city_district": "Bruxelles - Brussel",
+        "city": "Bruxelles - Brussel",
+        "county": "Brussel-Hoofdstad - Bruxelles-Capitale",
+        "region": "Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest",
+        "ISO3166-2-lvl4": "BE-BRU",
+        "postcode": "1050",
+        "country": "België / Belgique / Belgien",
+        "country_code": "be"
+      },
+      "boundingbox": [
+        "50.8049249",
+        "50.8050786",
+        "4.3870168",
+        "4.3873504"
+      ]
+    }
+  ],
+  "45 bd Charcot - NEUILLY-S/SEINE (92) FRANCE": [],
+  "la Tuilerie - ST NOM LA BRETECHE FRANCE": [
+    {
+      "place_id": 97884698,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 1732216848,
+      "lat": "48.8565193",
+      "lon": "2.0354201",
+      "category": "place",
+      "type": "locality",
+      "place_rank": 25,
+      "importance": 0.06672547417410543,
+      "addresstype": "locality",
+      "name": "Étoile de la Tuilerie",
+      "display_name": "Étoile de la Tuilerie, Saint-Nom-la-Bretèche, Saint-Germain-en-Laye, Yvelines, Île-de-France, France métropolitaine, 78860, France",
+      "address": {
+        "locality": "Étoile de la Tuilerie",
+        "village": "Saint-Nom-la-Bretèche",
+        "municipality": "Saint-Germain-en-Laye",
+        "county": "Yvelines",
+        "ISO3166-2-lvl6": "FR-78",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "78860",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8465193",
+        "48.8665193",
+        "2.0254201",
+        "2.0454201"
+      ]
+    },
+    {
+      "place_id": 98213454,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 502965864,
+      "lat": "48.8534269",
+      "lon": "2.0416342",
+      "category": "highway",
+      "type": "residential",
+      "place_rank": 26,
+      "importance": 0.053392140840772075,
+      "addresstype": "road",
+      "name": "Chemin de la Porte de la Tuilerie",
+      "display_name": "Chemin de la Porte de la Tuilerie, Saint-Nom-la-Bretèche, Saint-Germain-en-Laye, Yvelines, Île-de-France, France métropolitaine, 78860, France",
+      "address": {
+        "road": "Chemin de la Porte de la Tuilerie",
+        "village": "Saint-Nom-la-Bretèche",
+        "municipality": "Saint-Germain-en-Laye",
+        "county": "Yvelines",
+        "ISO3166-2-lvl6": "FR-78",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "78860",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8530304",
+        "48.8538241",
+        "2.0415536",
+        "2.0417117"
+      ]
+    },
+    {
+      "place_id": 98102073,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 479120560,
+      "lat": "48.8536491",
+      "lon": "2.0397682",
+      "category": "highway",
+      "type": "service",
+      "place_rank": 27,
+      "importance": 0.040058807507438766,
+      "addresstype": "road",
+      "name": "Hameau de la Tuilerie",
+      "display_name": "Hameau de la Tuilerie, Saint-Nom-la-Bretèche, Saint-Germain-en-Laye, Yvelines, Île-de-France, France métropolitaine, 78860, France",
+      "address": {
+        "road": "Hameau de la Tuilerie",
+        "village": "Saint-Nom-la-Bretèche",
+        "municipality": "Saint-Germain-en-Laye",
+        "county": "Yvelines",
+        "ISO3166-2-lvl6": "FR-78",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "78860",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8532214",
+        "48.8536683",
+        "2.0396153",
+        "2.0397699"
+      ]
+    }
+  ],
+  "Villa la Cava, av. de la Cava 06 - FRANCE CANNES": [],
+  "2/4 rue Blaise Pascal 93 - LE BLANC-MESNIL FRANCE": [
+    {
+      "place_id": 98413714,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 43161253,
+      "lat": "48.9424948",
+      "lon": "2.4763902",
+      "category": "highway",
+      "type": "unclassified",
+      "place_rank": 26,
+      "importance": 0.053392384985122415,
+      "addresstype": "road",
+      "name": "Rue Blaise Pascal",
+      "display_name": "Rue Blaise Pascal, Zone d'Activités du Coudray, Le Blanc-Mesnil, Le Raincy, Seine-Saint-Denis, Île-de-France, France métropolitaine, 93150, France",
+      "address": {
+        "road": "Rue Blaise Pascal",
+        "industrial": "Zone d'Activités du Coudray",
+        "town": "Le Blanc-Mesnil",
+        "municipality": "Le Raincy",
+        "county": "Seine-Saint-Denis",
+        "ISO3166-2-lvl6": "FR-93",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "93150",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.9419269",
+        "48.9431334",
+        "2.4755492",
+        "2.4771604"
+      ]
+    }
+  ],
+  "11 bis rue Balzac PARIS 8e FRANCE": [
+    {
+      "place_id": 98409344,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 839872088,
+      "lat": "48.8738634",
+      "lon": "2.3005892",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 9.317235065227768e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "11 bis, Rue Balzac, Quartier du Faubourg-du-Roule, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+      "address": {
+        "house_number": "11 bis",
+        "road": "Rue Balzac",
+        "quarter": "Quartier du Faubourg-du-Roule",
+        "suburb": "Paris 8e Arrondissement",
+        "city_district": "Paris",
+        "city": "Paris",
+        "ISO3166-2-lvl6": "FR-75C",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "75008",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8738134",
+        "48.8739134",
+        "2.3005392",
+        "2.3006392"
+      ]
+    }
+  ],
+  "SESSA (Tessin) SUISSE": [
+    {
+      "place_id": 73673135,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 1684756,
+      "lat": "45.9998346",
+      "lon": "8.8189400",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 20,
+      "importance": 0.38656660986684044,
+      "addresstype": "village",
+      "name": "Sessa",
+      "display_name": "Sessa, Tresa, Circolo di Sessa, Distretto di Lugano, Ticino, 6997, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "village": "Sessa",
+        "city": "Tresa",
+        "municipality": "Circolo di Sessa",
+        "county": "Distretto di Lugano",
+        "state": "Ticino",
+        "ISO3166-2-lvl4": "CH-TI",
+        "postcode": "6997",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "45.9942680",
+        "46.0122251",
+        "8.7930889",
+        "8.8325391"
+      ]
+    }
+  ],
+  "45 Bd Charcot Neuilly s/Seine - France": [],
+  "La Tuilerie Saint-Nom la Bretèche (78) France": [
+    {
+      "place_id": 97884698,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 1732216848,
+      "lat": "48.8565193",
+      "lon": "2.0354201",
+      "category": "place",
+      "type": "locality",
+      "place_rank": 25,
+      "importance": 0.06672547417410543,
+      "addresstype": "locality",
+      "name": "Étoile de la Tuilerie",
+      "display_name": "Étoile de la Tuilerie, Saint-Nom-la-Bretèche, Saint-Germain-en-Laye, Yvelines, Île-de-France, France métropolitaine, 78860, France",
+      "address": {
+        "locality": "Étoile de la Tuilerie",
+        "village": "Saint-Nom-la-Bretèche",
+        "municipality": "Saint-Germain-en-Laye",
+        "county": "Yvelines",
+        "ISO3166-2-lvl6": "FR-78",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "78860",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8465193",
+        "48.8665193",
+        "2.0254201",
+        "2.0454201"
+      ]
+    },
+    {
+      "place_id": 98213454,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 502965864,
+      "lat": "48.8534269",
+      "lon": "2.0416342",
+      "category": "highway",
+      "type": "residential",
+      "place_rank": 26,
+      "importance": 0.053392140840772075,
+      "addresstype": "road",
+      "name": "Chemin de la Porte de la Tuilerie",
+      "display_name": "Chemin de la Porte de la Tuilerie, Saint-Nom-la-Bretèche, Saint-Germain-en-Laye, Yvelines, Île-de-France, France métropolitaine, 78860, France",
+      "address": {
+        "road": "Chemin de la Porte de la Tuilerie",
+        "village": "Saint-Nom-la-Bretèche",
+        "municipality": "Saint-Germain-en-Laye",
+        "county": "Yvelines",
+        "ISO3166-2-lvl6": "FR-78",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "78860",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8530304",
+        "48.8538241",
+        "2.0415536",
+        "2.0417117"
+      ]
+    },
+    {
+      "place_id": 98102073,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 479120560,
+      "lat": "48.8536491",
+      "lon": "2.0397682",
+      "category": "highway",
+      "type": "service",
+      "place_rank": 27,
+      "importance": 0.040058807507438766,
+      "addresstype": "road",
+      "name": "Hameau de la Tuilerie",
+      "display_name": "Hameau de la Tuilerie, Saint-Nom-la-Bretèche, Saint-Germain-en-Laye, Yvelines, Île-de-France, France métropolitaine, 78860, France",
+      "address": {
+        "road": "Hameau de la Tuilerie",
+        "village": "Saint-Nom-la-Bretèche",
+        "municipality": "Saint-Germain-en-Laye",
+        "county": "Yvelines",
+        "ISO3166-2-lvl6": "FR-78",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "78860",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8532214",
+        "48.8536683",
+        "2.0396153",
+        "2.0397699"
+      ]
+    }
+  ],
+  "9 Rue de l'Orangerie Compiègne (60) France.": [
+    {
+      "place_id": 98155291,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 3427040028,
+      "lat": "49.4145834",
+      "lon": "2.8313802",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 6.924925612263703e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "9, Rue de l'Orangerie, Saint-Lazare, Les Veneurs, Compiègne, Oise, Hauts-de-France, France métropolitaine, 60200, France",
+      "address": {
+        "house_number": "9",
+        "road": "Rue de l'Orangerie",
+        "neighbourhood": "Saint-Lazare",
+        "suburb": "Les Veneurs",
+        "town": "Compiègne",
+        "municipality": "Compiègne",
+        "county": "Oise",
+        "ISO3166-2-lvl6": "FR-60",
+        "state": "Hauts-de-France",
+        "ISO3166-2-lvl4": "FR-HDF",
+        "region": "France métropolitaine",
+        "postcode": "60200",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "49.4145334",
+        "49.4146334",
+        "2.8313302",
+        "2.8314302"
+      ]
+    },
+    {
+      "place_id": 99462292,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 9797706278,
+      "lat": "49.6540075",
+      "lon": "3.0480920",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 6.554436560611913e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "9, Rue de l'Orangerie, Guiscard, Compiègne, Oise, Hauts-de-France, France métropolitaine, 60640, France",
+      "address": {
+        "house_number": "9",
+        "road": "Rue de l'Orangerie",
+        "village": "Guiscard",
+        "municipality": "Compiègne",
+        "county": "Oise",
+        "ISO3166-2-lvl6": "FR-60",
+        "state": "Hauts-de-France",
+        "ISO3166-2-lvl4": "FR-HDF",
+        "region": "France métropolitaine",
+        "postcode": "60640",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "49.6539575",
+        "49.6540575",
+        "3.0480420",
+        "3.0481420"
+      ]
+    }
+  ],
+  "11 bis Rue Balzac - Paris (8°)": [
+    {
+      "place_id": 98409344,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 839872088,
+      "lat": "48.8738634",
+      "lon": "2.3005892",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 9.317235065227768e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "11 bis, Rue Balzac, Quartier du Faubourg-du-Roule, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+      "address": {
+        "house_number": "11 bis",
+        "road": "Rue Balzac",
+        "quarter": "Quartier du Faubourg-du-Roule",
+        "suburb": "Paris 8e Arrondissement",
+        "city_district": "Paris",
+        "city": "Paris",
+        "ISO3166-2-lvl6": "FR-75C",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "75008",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8738134",
+        "48.8739134",
+        "2.3005392",
+        "2.3006392"
+      ]
+    }
+  ],
+  "Sessa (Ti)": [
+    {
+      "place_id": 73955555,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 1684756,
+      "lat": "45.9998346",
+      "lon": "8.8189400",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 20,
+      "importance": 0.38656660986684044,
+      "addresstype": "village",
+      "name": "Sessa",
+      "display_name": "Sessa, Tresa, Circolo di Sessa, Distretto di Lugano, Ticino, 6997, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "village": "Sessa",
+        "city": "Tresa",
+        "municipality": "Circolo di Sessa",
+        "county": "Distretto di Lugano",
+        "state": "Ticino",
+        "ISO3166-2-lvl4": "CH-TI",
+        "postcode": "6997",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "45.9942680",
+        "46.0122251",
+        "8.7930889",
+        "8.8325391"
+      ]
+    }
+  ],
+  "(Cabinet D. FEAU - 132 Boulevard Haussmann - 75 / PARIS 8": [],
+  "- La Tuilerie - 78/St-Nom la Bretèche": [
+    {
+      "place_id": 99106766,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 1732216848,
+      "lat": "48.8565193",
+      "lon": "2.0354201",
+      "category": "place",
+      "type": "locality",
+      "place_rank": 25,
+      "importance": 0.06672547417410543,
+      "addresstype": "locality",
+      "name": "Étoile de la Tuilerie",
+      "display_name": "Étoile de la Tuilerie, Saint-Nom-la-Bretèche, Saint-Germain-en-Laye, Yvelines, Île-de-France, France métropolitaine, 78860, France",
+      "address": {
+        "locality": "Étoile de la Tuilerie",
+        "village": "Saint-Nom-la-Bretèche",
+        "municipality": "Saint-Germain-en-Laye",
+        "county": "Yvelines",
+        "ISO3166-2-lvl6": "FR-78",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "78860",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8465193",
+        "48.8665193",
+        "2.0254201",
+        "2.0454201"
+      ]
+    },
+    {
+      "place_id": 97066616,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 502965864,
+      "lat": "48.8534269",
+      "lon": "2.0416342",
+      "category": "highway",
+      "type": "residential",
+      "place_rank": 26,
+      "importance": 0.053392140840772075,
+      "addresstype": "road",
+      "name": "Chemin de la Porte de la Tuilerie",
+      "display_name": "Chemin de la Porte de la Tuilerie, Saint-Nom-la-Bretèche, Saint-Germain-en-Laye, Yvelines, Île-de-France, France métropolitaine, 78860, France",
+      "address": {
+        "road": "Chemin de la Porte de la Tuilerie",
+        "village": "Saint-Nom-la-Bretèche",
+        "municipality": "Saint-Germain-en-Laye",
+        "county": "Yvelines",
+        "ISO3166-2-lvl6": "FR-78",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "78860",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8530304",
+        "48.8538241",
+        "2.0415536",
+        "2.0417117"
+      ]
+    },
+    {
+      "place_id": 97058088,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 479120560,
+      "lat": "48.8536491",
+      "lon": "2.0397682",
+      "category": "highway",
+      "type": "service",
+      "place_rank": 27,
+      "importance": 0.040058807507438766,
+      "addresstype": "road",
+      "name": "Hameau de la Tuilerie",
+      "display_name": "Hameau de la Tuilerie, Saint-Nom-la-Bretèche, Saint-Germain-en-Laye, Yvelines, Île-de-France, France métropolitaine, 78860, France",
+      "address": {
+        "road": "Hameau de la Tuilerie",
+        "village": "Saint-Nom-la-Bretèche",
+        "municipality": "Saint-Germain-en-Laye",
+        "county": "Yvelines",
+        "ISO3166-2-lvl6": "FR-78",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "78860",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8532214",
+        "48.8536683",
+        "2.0396153",
+        "2.0397699"
+      ]
+    }
+  ],
+  "II bis rue Balzac - 75 / PARIS 8e": [],
+  "SESSA (Tessin) Suisse": [
+    {
+      "place_id": 73505927,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 1684756,
+      "lat": "45.9998346",
+      "lon": "8.8189400",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 20,
+      "importance": 0.38656660986684044,
+      "addresstype": "village",
+      "name": "Sessa",
+      "display_name": "Sessa, Tresa, Circolo di Sessa, Distretto di Lugano, Ticino, 6997, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "village": "Sessa",
+        "city": "Tresa",
+        "municipality": "Circolo di Sessa",
+        "county": "Distretto di Lugano",
+        "state": "Ticino",
+        "ISO3166-2-lvl4": "CH-TI",
+        "postcode": "6997",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "45.9942680",
+        "46.0122251",
+        "8.7930889",
+        "8.8325391"
+      ]
+    }
+  ],
+  "- Villa La Cava Avenue de la Cava - 06 / CANNES": [],
+  "45, bd du Commandant Charcot NEUILLY S/SEINE": [],
+  "La Tuillerie SAINT NOM LA BRETECHE": [],
+  "Villa La Cava Avenue de La Cava 06 / CANNES": [],
+  "II bis, rue Balzac PARIS 8e": [],
+  "SESSA - TESSIN SUISSE": [
+    {
+      "place_id": 73543415,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 1684756,
+      "lat": "45.9998346",
+      "lon": "8.8189400",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 20,
+      "importance": 0.38656660986684044,
+      "addresstype": "village",
+      "name": "Sessa",
+      "display_name": "Sessa, Tresa, Circolo di Sessa, Distretto di Lugano, Ticino, 6997, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "village": "Sessa",
+        "city": "Tresa",
+        "municipality": "Circolo di Sessa",
+        "county": "Distretto di Lugano",
+        "state": "Ticino",
+        "ISO3166-2-lvl4": "CH-TI",
+        "postcode": "6997",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "45.9942680",
+        "46.0122251",
+        "8.7930889",
+        "8.8325391"
+      ]
+    }
+  ],
+  "45 Boulevard Charcot - Neuilly-sur Seine (Seine)": [
+    {
+      "place_id": 98205236,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 1931491944,
+      "lat": "48.8770827",
+      "lon": "2.2563511",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 9.317235065227768e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "45, Boulevard du Commandant Charcot, Neuilly-sur-Seine, Nanterre, Hauts-de-Seine, Île-de-France, France métropolitaine, 92200, France",
+      "address": {
+        "house_number": "45",
+        "road": "Boulevard du Commandant Charcot",
+        "town": "Neuilly-sur-Seine",
+        "municipality": "Nanterre",
+        "county": "Hauts-de-Seine",
+        "ISO3166-2-lvl6": "FR-92",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "92200",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8770327",
+        "48.8771327",
+        "2.2563011",
+        "2.2564011"
+      ]
+    }
+  ],
+  "16, rue Saint Pierre - Neuilly sur Seine (Seine)": [
+    {
+      "place_id": 98154307,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 3220460744,
+      "lat": "48.8828513",
+      "lon": "2.2712762",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 6.806057831688437e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "16, Rue Saint-Pierre, Neuilly-sur-Seine, Nanterre, Hauts-de-Seine, Île-de-France, France métropolitaine, 92200, France",
+      "address": {
+        "house_number": "16",
+        "road": "Rue Saint-Pierre",
+        "town": "Neuilly-sur-Seine",
+        "municipality": "Nanterre",
+        "county": "Hauts-de-Seine",
+        "ISO3166-2-lvl6": "FR-92",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "92200",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8828013",
+        "48.8829013",
+        "2.2712262",
+        "2.2713262"
+      ]
+    }
+  ],
+  "9 rue de l'Orangerie Compiegne (Oise)": [
+    {
+      "place_id": 98328146,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 3427040028,
+      "lat": "49.4145834",
+      "lon": "2.8313802",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 6.924925612263703e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "9, Rue de l'Orangerie, Saint-Lazare, Les Veneurs, Compiègne, Oise, Hauts-de-France, France métropolitaine, 60200, France",
+      "address": {
+        "house_number": "9",
+        "road": "Rue de l'Orangerie",
+        "neighbourhood": "Saint-Lazare",
+        "suburb": "Les Veneurs",
+        "town": "Compiègne",
+        "municipality": "Compiègne",
+        "county": "Oise",
+        "ISO3166-2-lvl6": "FR-60",
+        "state": "Hauts-de-France",
+        "ISO3166-2-lvl4": "FR-HDF",
+        "region": "France métropolitaine",
+        "postcode": "60200",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "49.4145334",
+        "49.4146334",
+        "2.8313302",
+        "2.8314302"
+      ]
+    },
+    {
+      "place_id": 98868308,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 9797706278,
+      "lat": "49.6540075",
+      "lon": "3.0480920",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 6.554436560611913e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "9, Rue de l'Orangerie, Guiscard, Compiègne, Oise, Hauts-de-France, France métropolitaine, 60640, France",
+      "address": {
+        "house_number": "9",
+        "road": "Rue de l'Orangerie",
+        "village": "Guiscard",
+        "municipality": "Compiègne",
+        "county": "Oise",
+        "ISO3166-2-lvl6": "FR-60",
+        "state": "Hauts-de-France",
+        "ISO3166-2-lvl4": "FR-HDF",
+        "region": "France métropolitaine",
+        "postcode": "60640",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "49.6539575",
+        "49.6540575",
+        "3.0480420",
+        "3.0481420"
+      ]
+    }
+  ],
+  "11 bis rue Balzac Paris (8U+00B0)": [],
+  "73, rue des Vignes - Paris XVIe": [
+    {
+      "place_id": 98307058,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 1011707776,
+      "lat": "48.8569277",
+      "lon": "2.2736385",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 9.317235065227768e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "73, Rue des Vignes, Quartier de la Muette, Paris 16e Arrondissement, Paris, Île-de-France, France métropolitaine, 75016, France",
+      "address": {
+        "house_number": "73",
+        "road": "Rue des Vignes",
+        "city_block": "Quartier de la Muette",
+        "suburb": "Paris 16e Arrondissement",
+        "city_district": "Paris",
+        "city": "Paris",
+        "ISO3166-2-lvl6": "FR-75C",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "75016",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8568777",
+        "48.8569777",
+        "2.2735885",
+        "2.2736885"
+      ]
+    },
+    {
+      "place_id": 98557792,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 13246475633,
+      "lat": "48.8569500",
+      "lon": "2.2735596",
+      "category": "shop",
+      "type": "beauty",
+      "place_rank": 30,
+      "importance": 9.317235065227768e-05,
+      "addresstype": "shop",
+      "name": "Les Ongles de Cerise",
+      "display_name": "Les Ongles de Cerise, 73, Rue des Vignes, Quartier de la Muette, Paris 16e Arrondissement, Paris, Île-de-France, France métropolitaine, 75016, France",
+      "address": {
+        "shop": "Les Ongles de Cerise",
+        "house_number": "73",
+        "road": "Rue des Vignes",
+        "city_block": "Quartier de la Muette",
+        "suburb": "Paris 16e Arrondissement",
+        "city_district": "Paris",
+        "city": "Paris",
+        "ISO3166-2-lvl6": "FR-75C",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "75016",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8569000",
+        "48.8570000",
+        "2.2735096",
+        "2.2736096"
+      ]
+    }
+  ],
+  "11 bis - rue Balzac- Paris (8U+00B0)": [],
+  "11 bis - rue Balzac - Paris (8U+00B0)": [],
+  "Sessa (Tessin)": [
+    {
+      "place_id": 73505927,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 1684756,
+      "lat": "45.9998346",
+      "lon": "8.8189400",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 20,
+      "importance": 0.38656660986684044,
+      "addresstype": "village",
+      "name": "Sessa",
+      "display_name": "Sessa, Tresa, Circolo di Sessa, Distretto di Lugano, Ticino, 6997, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "village": "Sessa",
+        "city": "Tresa",
+        "municipality": "Circolo di Sessa",
+        "county": "Distretto di Lugano",
+        "state": "Ticino",
+        "ISO3166-2-lvl4": "CH-TI",
+        "postcode": "6997",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "45.9942680",
+        "46.0122251",
+        "8.7930889",
+        "8.8325391"
+      ]
+    }
+  ],
+  "45 Boulevard Charcot - Neuilly s/Seine (Seine": [],
+  "16, rue Saint Pierre - Neuilly s/Seine (Seine": [],
+  "73 rue des Vignes - Paris (16U+00B0)": [],
+  "11 bis Rue Balzac - Paris (8U+00B0)": [],
+  "15 Via Cattedrale LUGANO": [
+    {
+      "place_id": 73457781,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 304787598,
+      "lat": "46.0049166",
+      "lon": "8.9489704",
+      "category": "building",
+      "type": "apartments",
+      "place_rank": 30,
+      "importance": 6.862668802925181e-05,
+      "addresstype": "building",
+      "name": "",
+      "display_name": "15, Via Cattedrale, Quartiere Maghetti, Pregassona, Breganzona, Lugano, Circolo di Lugano ovest, Distretto di Lugano, Ticino, 6900, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "house_number": "15",
+        "road": "Via Cattedrale",
+        "neighbourhood": "Quartiere Maghetti",
+        "suburb": "Pregassona",
+        "village": "Breganzona",
+        "city": "Lugano",
+        "municipality": "Circolo di Lugano ovest",
+        "county": "Distretto di Lugano",
+        "state": "Ticino",
+        "ISO3166-2-lvl4": "CH-TI",
+        "postcode": "6900",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "46.0047390",
+        "46.0049945",
+        "8.9488744",
+        "8.9491172"
+      ]
+    }
+  ],
+  "LUGANO (Suisse)": [
+    {
+      "place_id": 73465218,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 2888417,
+      "lat": "46.0038007",
+      "lon": "8.9512275",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 16,
+      "importance": 0.6390906599086913,
+      "addresstype": "city",
+      "name": "Lugano",
+      "display_name": "Lugano, Circolo di Lugano ovest, Distretto di Lugano, Ticino, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "city": "Lugano",
+        "municipality": "Circolo di Lugano ovest",
+        "county": "Distretto di Lugano",
+        "state": "Ticino",
+        "ISO3166-2-lvl4": "CH-TI",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "45.9396730",
+        "46.1191468",
+        "8.8936571",
+        "9.0896151"
+      ]
+    },
+    {
+      "place_id": 73037826,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 1688750,
+      "lat": "46.0376492",
+      "lon": "8.9372543",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 12,
+      "importance": 0.5024930130167787,
+      "addresstype": "county",
+      "name": "Distretto di Lugano",
+      "display_name": "Distretto di Lugano, Ticino, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "county": "Distretto di Lugano",
+        "state": "Ticino",
+        "ISO3166-2-lvl4": "CH-TI",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "45.9086434",
+        "46.1472092",
+        "8.7858834",
+        "9.0896151"
+      ]
+    }
+  ],
+  "4, rue Emile Augier PARIS (16\\u00B0)": [],
+  "La garenne, par CLISSON(L-I)": [],
+  "6, Rue Marie Dacy PARIS (14\\u00B0)": [],
+  "16 aV.de la Toison d'Or BRUXELLES (Belgique)": [
+    {
+      "place_id": 105824637,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 11635479016,
+      "lat": "50.8375006",
+      "lon": "4.3602301",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 7.775463492785561e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "16, Avenue de la Toison d'Or - Gulden-Vlieslaan, La Marolle - De Marol, Bruxelles - Brussel, Ixelles - Elsene, Brussel-Hoofdstad - Bruxelles-Capitale, Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest, 1000, België / Belgique / Belgien",
+      "address": {
+        "house_number": "16",
+        "road": "Avenue de la Toison d'Or - Gulden-Vlieslaan",
+        "neighbourhood": "La Marolle - De Marol",
+        "city_district": "Bruxelles - Brussel",
+        "town": "Ixelles - Elsene",
+        "county": "Brussel-Hoofdstad - Bruxelles-Capitale",
+        "region": "Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest",
+        "ISO3166-2-lvl4": "BE-BRU",
+        "postcode": "1000",
+        "country": "België / Belgique / Belgien",
+        "country_code": "be"
+      },
+      "boundingbox": [
+        "50.8374506",
+        "50.8375506",
+        "4.3601801",
+        "4.3602801"
+      ]
+    }
+  ],
+  "52, R.Charles Laffitte NEUILLY S/SEINE": [],
+  "3, quai du Mont Blanc GENEVE (Suisse)": [
+    {
+      "place_id": 91626764,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 1962244175,
+      "lat": "46.2073406",
+      "lon": "6.1479913",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 7.90165560387124e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "3, Quai du Mont-Blanc, Saint-Gervais, Grottes et Saint-Gervais, Genève, 1201, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "house_number": "3",
+        "road": "Quai du Mont-Blanc",
+        "neighbourhood": "Saint-Gervais",
+        "suburb": "Grottes et Saint-Gervais",
+        "city": "Genève",
+        "state": "Genève",
+        "ISO3166-2-lvl4": "CH-GE",
+        "postcode": "1201",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "46.2072906",
+        "46.2073906",
+        "6.1479413",
+        "6.1480413"
+      ]
+    }
+  ],
+  "47, route de Florissant GENEVE (Suisse)": [
+    {
+      "place_id": 91160345,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 2184252495,
+      "lat": "46.1945059",
+      "lon": "6.1598770",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 7.90165560387124e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "47, Route de Florissant, Florissant, Champel, Genève, 1206, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "house_number": "47",
+        "road": "Route de Florissant",
+        "quarter": "Florissant",
+        "suburb": "Champel",
+        "city": "Genève",
+        "state": "Genève",
+        "ISO3166-2-lvl4": "CH-GE",
+        "postcode": "1206",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "46.1944559",
+        "46.1945559",
+        "6.1598270",
+        "6.1599270"
+      ]
+    }
+  ],
+  "3, quai du mont Blanc GENEVE (Suisse)": [
+    {
+      "place_id": 90761374,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 1962244175,
+      "lat": "46.2073406",
+      "lon": "6.1479913",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 7.90165560387124e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "3, Quai du Mont-Blanc, Saint-Gervais, Grottes et Saint-Gervais, Genève, 1201, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "house_number": "3",
+        "road": "Quai du Mont-Blanc",
+        "neighbourhood": "Saint-Gervais",
+        "suburb": "Grottes et Saint-Gervais",
+        "city": "Genève",
+        "state": "Genève",
+        "ISO3166-2-lvl4": "CH-GE",
+        "postcode": "1201",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "46.2072906",
+        "46.2073906",
+        "6.1479413",
+        "6.1480413"
+      ]
+    }
+  ],
+  "Surville, Petit Lancy GENEVE (Suisse)": [
+    {
+      "place_id": 91178422,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 49722974,
+      "lat": "46.1921348",
+      "lon": "6.1261978",
+      "category": "leisure",
+      "type": "park",
+      "place_rank": 24,
+      "importance": 0.08007901655603873,
+      "addresstype": "park",
+      "name": "Parc Surville",
+      "display_name": "Parc Surville, Petit-Lancy, Lancy, Genève, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "park": "Parc Surville",
+        "suburb": "Petit-Lancy",
+        "town": "Lancy",
+        "state": "Genève",
+        "ISO3166-2-lvl4": "CH-GE",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "46.1906693",
+        "46.1936199",
+        "6.1243039",
+        "6.1270053"
+      ]
+    },
+    {
+      "place_id": 90990046,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 49585261,
+      "lat": "46.1926018",
+      "lon": "6.1249284",
+      "category": "highway",
+      "type": "residential",
+      "place_rank": 26,
+      "importance": 0.05341234988937205,
+      "addresstype": "road",
+      "name": "Chemin de Surville",
+      "display_name": "Chemin de Surville, Petit-Lancy, Lancy, Genève, 1200, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "road": "Chemin de Surville",
+        "suburb": "Petit-Lancy",
+        "town": "Lancy",
+        "state": "Genève",
+        "ISO3166-2-lvl4": "CH-GE",
+        "postcode": "1200",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "46.1918012",
+        "46.1934231",
+        "6.1246003",
+        "6.1249289"
+      ]
+    },
+    {
+      "place_id": 91307000,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 1386572841,
+      "lat": "46.1937176",
+      "lon": "6.1244064",
+      "category": "highway",
+      "type": "pedestrian",
+      "place_rank": 26,
+      "importance": 0.05341234988937205,
+      "addresstype": "road",
+      "name": "Esplanade de Surville",
+      "display_name": "Esplanade de Surville, Petit-Lancy, Lancy, Genève, 1200, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "road": "Esplanade de Surville",
+        "suburb": "Petit-Lancy",
+        "town": "Lancy",
+        "state": "Genève",
+        "ISO3166-2-lvl4": "CH-GE",
+        "postcode": "1200",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "46.1934231",
+        "46.1937605",
+        "6.1240571",
+        "6.1246397"
+      ]
+    }
+  ],
+  "11 bis rue Balzac PARIS (8U+00B0)": [],
+  "2, rue des Craeyer BRUXELLES (Belgique)": [],
+  "51, rue Vauvenargues PARIS (18U+00B0)": [],
+  "11bis rue Balzac PARIS (8U+00B0)": [],
+  "55, Bd Montmorency PARIS (16U+00B0)": [],
+  "29, rue du Rhône GENEVE (Suisse)": [
+    {
+      "place_id": 91033495,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 1293462875,
+      "lat": "46.2042212",
+      "lon": "6.1475649",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 7.90165560387124e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "29, Rue du Rhône, Vieille-Ville, Les Tranchées, Cité, Genève, 1204, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "house_number": "29",
+        "road": "Rue du Rhône",
+        "neighbourhood": "Vieille-Ville",
+        "quarter": "Les Tranchées",
+        "suburb": "Cité",
+        "city": "Genève",
+        "state": "Genève",
+        "ISO3166-2-lvl4": "CH-GE",
+        "postcode": "1204",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "46.2041712",
+        "46.2042712",
+        "6.1475149",
+        "6.1476149"
+      ]
+    }
+  ],
+  "36, rue Daubenton PARIS (5U+00B0)": [],
+  "à Court Saint Etienne (Belgique)": [
+    {
+      "place_id": 105359223,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 5645361748,
+      "lat": "50.6450545",
+      "lon": "4.5682001",
+      "category": "tourism",
+      "type": "attraction",
+      "place_rank": 30,
+      "importance": 0.21337448257116948,
+      "addresstype": "tourism",
+      "name": "Monument à Émile Henricot",
+      "display_name": "Monument à Émile Henricot, Place des Déportés, Le Court Village, Wisterzée, Court-Saint-Etienne, Nivelles, Brabant wallon, Wallonie, 1490, België / Belgique / Belgien",
+      "address": {
+        "tourism": "Monument à Émile Henricot",
+        "road": "Place des Déportés",
+        "neighbourhood": "Le Court Village",
+        "village": "Wisterzée",
+        "town": "Court-Saint-Etienne",
+        "county": "Nivelles",
+        "state": "Brabant wallon",
+        "ISO3166-2-lvl6": "BE-WBR",
+        "ISO3166-2-lvl4": "BE-WAL",
+        "postcode": "1490",
+        "country": "België / Belgique / Belgien",
+        "country_code": "be"
+      },
+      "boundingbox": [
+        "50.6450045",
+        "50.6451045",
+        "4.5681501",
+        "4.5682501"
+      ]
+    },
+    {
+      "place_id": 105318959,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 4759312506,
+      "lat": "50.6108376",
+      "lon": "4.5837441",
+      "category": "place",
+      "type": "locality",
+      "place_rank": 25,
+      "importance": 0.0667197779812314,
+      "addresstype": "locality",
+      "name": "À l'arbre de la Justice",
+      "display_name": "À l'arbre de la Justice, Sart-Messire-Guillaume, Court-Saint-Etienne, Nivelles, Brabant wallon, Wallonie, 1490, België / Belgique / Belgien",
+      "address": {
+        "locality": "À l'arbre de la Justice",
+        "village": "Sart-Messire-Guillaume",
+        "town": "Court-Saint-Etienne",
+        "county": "Nivelles",
+        "state": "Brabant wallon",
+        "ISO3166-2-lvl6": "BE-WBR",
+        "ISO3166-2-lvl4": "BE-WAL",
+        "postcode": "1490",
+        "country": "België / Belgique / Belgien",
+        "country_code": "be"
+      },
+      "boundingbox": [
+        "50.6008376",
+        "50.6208376",
+        "4.5737441",
+        "4.5937441"
+      ]
+    },
+    {
+      "place_id": 105713924,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 1427961398,
+      "lat": "50.6382337",
+      "lon": "4.5628633",
+      "category": "highway",
+      "type": "residential",
+      "place_rank": 26,
+      "importance": 0.05338644464789803,
+      "addresstype": "road",
+      "name": "Clos du Pic Noir (à valider)",
+      "display_name": "Clos du Pic Noir (à valider), Suzeril, Wisterzée, Court-Saint-Etienne, Nivelles, Brabant wallon, Wallonie, 1490, België / Belgique / Belgien",
+      "address": {
+        "road": "Clos du Pic Noir (à valider)",
+        "hamlet": "Suzeril",
+        "village": "Wisterzée",
+        "town": "Court-Saint-Etienne",
+        "county": "Nivelles",
+        "state": "Brabant wallon",
+        "ISO3166-2-lvl6": "BE-WBR",
+        "ISO3166-2-lvl4": "BE-WAL",
+        "postcode": "1490",
+        "country": "België / Belgique / Belgien",
+        "country_code": "be"
+      },
+      "boundingbox": [
+        "50.6379002",
+        "50.6385150",
+        "4.5625466",
+        "4.5632478"
+      ]
+    }
+  ],
+  "Boîte postale 41 à MARRAKECH-MEDINA": [],
+  "24 Avenue Gambetta MONTROUGE": [
+    {
+      "place_id": 98348520,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 6367495929,
+      "lat": "48.8139324",
+      "lon": "2.3231485",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 6.221942473482898e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "24, Avenue Léon Gambetta, Quartier Vieux Montrouge, Montrouge, Antony, Hauts-de-Seine, Île-de-France, France métropolitaine, 92120, France",
+      "address": {
+        "house_number": "24",
+        "road": "Avenue Léon Gambetta",
+        "suburb": "Quartier Vieux Montrouge",
+        "town": "Montrouge",
+        "municipality": "Antony",
+        "county": "Hauts-de-Seine",
+        "ISO3166-2-lvl6": "FR-92",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "92120",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8138824",
+        "48.8139824",
+        "2.3230985",
+        "2.3231985"
+      ]
+    }
+  ],
+  "1, rue J.B. Colyns IXELLES- BRUXELLES.": [],
+  "3, Av. Gaugé VIROFLAY (S-et-O)": [],
+  "Essendièras, par St Médard d'Exciseuil (Dordogne)": [],
+  "195 rue de Grenelle PARIS": [
+    {
+      "place_id": 98686403,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 913935436,
+      "lat": "48.8566216",
+      "lon": "2.3034072",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 9.317235065227768e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "195, Rue de Grenelle, Quartier du Gros-Caillou, Paris 7e Arrondissement, Paris, Île-de-France, France métropolitaine, 75007, France",
+      "address": {
+        "house_number": "195",
+        "road": "Rue de Grenelle",
+        "quarter": "Quartier du Gros-Caillou",
+        "suburb": "Paris 7e Arrondissement",
+        "city_district": "Paris",
+        "city": "Paris",
+        "ISO3166-2-lvl6": "FR-75C",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "75007",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8565716",
+        "48.8566716",
+        "2.3033572",
+        "2.3034572"
+      ]
+    }
+  ],
+  "37 bis Promenade des Anglais MICE (A-M)": [],
+  "5, Avenue Weber GENEVE (Suisse)": [
+    {
+      "place_id": 91270172,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 2266119504,
+      "lat": "46.1994847",
+      "lon": "6.1625471",
+      "category": "place",
+      "type": "house",
+      "place_rank": 30,
+      "importance": 7.90165560387124e-05,
+      "addresstype": "place",
+      "name": "",
+      "display_name": "5, Avenue Théodore-Weber, Villereuse, Eaux-Vives, Genève, 1208, Schweiz/Suisse/Svizzera/Svizra",
+      "address": {
+        "house_number": "5",
+        "road": "Avenue Théodore-Weber",
+        "quarter": "Villereuse",
+        "suburb": "Eaux-Vives",
+        "city": "Genève",
+        "state": "Genève",
+        "ISO3166-2-lvl4": "CH-GE",
+        "postcode": "1208",
+        "country": "Schweiz/Suisse/Svizzera/Svizra",
+        "country_code": "ch"
+      },
+      "boundingbox": [
+        "46.1994347",
+        "46.1995347",
+        "6.1624971",
+        "6.1625971"
+      ]
+    }
+  ],
+  "34, Bd Marbeau PARIS (16°)": [
+    {
+      "place_id": 98087395,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 80551421,
+      "lat": "48.8748449",
+      "lon": "2.2794219",
+      "category": "highway",
+      "type": "service",
+      "place_rank": 27,
+      "importance": 0.040093172350652316,
+      "addresstype": "road",
+      "name": "Boulevard Marbeau",
+      "display_name": "Boulevard Marbeau, Quartier de la Porte-Dauphine, Paris 16e Arrondissement, Paris, Île-de-France, France métropolitaine, 75116, France",
+      "address": {
+        "road": "Boulevard Marbeau",
+        "city_block": "Quartier de la Porte-Dauphine",
+        "suburb": "Paris 16e Arrondissement",
+        "city_district": "Paris",
+        "city": "Paris",
+        "ISO3166-2-lvl6": "FR-75C",
+        "state": "Île-de-France",
+        "ISO3166-2-lvl4": "FR-IDF",
+        "region": "France métropolitaine",
+        "postcode": "75116",
+        "country": "France",
+        "country_code": "fr"
+      },
+      "boundingbox": [
+        "48.8746251",
+        "48.8750412",
+        "2.2790787",
+        "2.2797790"
+      ]
+    }
+  ]
+}
