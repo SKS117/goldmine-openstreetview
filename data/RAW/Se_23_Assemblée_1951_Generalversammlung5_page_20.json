@@ -36,8 +36,8 @@
                 "number": "34",
                 "name": "M. STRAP Pierre",
                 "address": "73, rue des Vignes Paris (16(U+00B0)",
-                "actions_o": "",
-                "actions_p": "1",
+                "actions_o": " 1",
+                "actions_p": "",
                 "no_de_voix": "",
                 "signature_present": true,
                 "signature": "Anti Pani"
@@ -46,8 +46,8 @@
                 "number": "35",
                 "name": "Mme WARNANT Pierre",
                 "address": "148 Av. Franklin Roosevelt\n BRUXELLES (Belgique)",
-                "actions_o": "200",
-                "actions_p": "",
+                "actions_o": "",
+                "actions_p": "200",
                 "no_de_voix": "",
                 "signature_present": false,
                 "signature": ""

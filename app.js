@@ -36,6 +36,8 @@ let personMarkerLayer = null;
 let sharesTypeChart = null;
 let sharesConcentrationChart = null;
 let sharesEntityChart = null;
+let sharesClassificationCountChart = null;
+let sharesClassificationSharesChart = null;
 let sharesChartsConfigured = false;
 
 let currentGvId = null;
@@ -493,6 +495,107 @@ function preferredEntityName(records, key) {
 }
 
 
+
+/* =========================================================
+   KLASSIFIKATION DER HISTORISCHEN AKTEUR*INNEN
+   ========================================================= */
+
+/*
+ * Die Klassifikation stammt direkt aus dem nodegoat-Export:
+ *
+ * W = weiblich
+ * M = männlich
+ * F = Firma
+ * U = unklar
+ *
+ * Ein fehlender Wert wird NICHT automatisch als U interpretiert.
+ */
+const CLASSIFICATION_ORDER = [
+  "W",
+  "M",
+  "F",
+  "U"
+];
+
+const CLASSIFICATION_LABELS = {
+  W: "weiblich",
+  M: "männlich",
+  F: "Firma",
+  U: "unklar"
+};
+
+const CLASSIFICATION_CHART_LABELS = {
+  W: "Frauen",
+  M: "Männer",
+  F: "Firmen",
+  U: "unklar"
+};
+
+const CLASSIFICATION_COLORS = {
+  W: {
+    background: "rgba(190, 157, 192, 0.78)",
+    border: "rgba(220, 194, 222, 1)"
+  },
+  M: {
+    background: "rgba(111, 166, 184, 0.78)",
+    border: "rgba(157, 201, 214, 1)"
+  },
+  F: {
+    background: "rgba(221, 190, 122, 0.78)",
+    border: "rgba(239, 216, 164, 1)"
+  },
+  U: {
+    background: "rgba(174, 180, 174, 0.58)",
+    border: "rgba(205, 211, 205, 0.9)"
+  }
+};
+
+
+function classificationCode(value) {
+  const code = String(
+    value ?? ""
+  )
+    .trim()
+    .toUpperCase();
+
+  return CLASSIFICATION_ORDER.includes(code)
+    ? code
+    : "";
+}
+
+
+function classificationForRecord(record) {
+  return classificationCode(
+    record?.classification_code
+  );
+}
+
+
+function classificationLabel(code) {
+  return (
+    CLASSIFICATION_LABELS[
+      classificationCode(code)
+    ] ||
+    "nicht klassifiziert"
+  );
+}
+
+
+function classificationProfileLabel(code) {
+  const normalized =
+    classificationCode(code);
+
+  if (!normalized) {
+    return "–";
+  }
+
+  return (
+    `${normalized} · ` +
+    `${classificationLabel(normalized)}`
+  );
+}
+
+
 function buildPersonIndex() {
   const grouped = new Map();
 
@@ -577,6 +680,30 @@ function buildPersonIndex() {
             actionsTotal(record)
           ),
         0
+      );
+
+    const classificationCodes = [
+      ...new Set(
+        entity.records
+          .map(classificationForRecord)
+          .filter(Boolean)
+      )
+    ];
+
+    if (classificationCodes.length > 1) {
+      console.warn(
+        "Widersprüchliche Klassifikation für",
+        entity.displayName,
+        classificationCodes
+      );
+    }
+
+    entity.classificationCode =
+      classificationCodes[0] || "";
+
+    entity.classificationLabel =
+      classificationLabel(
+        entity.classificationCode
       );
   }
 
@@ -1727,6 +1854,479 @@ function renderShareEntityChart() {
 }
 
 
+
+/* =========================================================
+   GESCHLECHT & AKTEUR*INNENTYP
+   ========================================================= */
+
+function classificationStatsForGv(gvId) {
+  const buckets = Object.fromEntries(
+    CLASSIFICATION_ORDER.map(
+      code => [
+        code,
+        {
+          actors: new Set(),
+          shares: 0
+        }
+      ]
+    )
+  );
+
+  for (const record of recordsForGv(gvId)) {
+    const code =
+      classificationForRecord(record);
+
+    if (!code) {
+      continue;
+    }
+
+    const key =
+      personKeyForRecord(record);
+
+    if (key) {
+      buckets[
+        code
+      ].actors.add(key);
+    }
+
+    const holding =
+      analysisHoldingForRecord(
+        record,
+        gvId
+      );
+
+    if (holding !== null) {
+      buckets[
+        code
+      ].shares += holding;
+    }
+  }
+
+  const gvTotal =
+    shareTotalsForGv(
+      gvId
+    ).total;
+
+  const result = {
+    gvTotal:
+      Number.isFinite(gvTotal)
+        ? gvTotal
+        : 0
+  };
+
+  CLASSIFICATION_ORDER.forEach(
+    code => {
+      result[
+        code
+      ] = {
+        actors:
+          buckets[code].actors.size,
+        shares:
+          buckets[code].shares,
+        sharePercent:
+          (
+            Number.isFinite(gvTotal) &&
+            gvTotal > 0
+          )
+            ? (
+                buckets[code].shares /
+                gvTotal *
+                100
+              )
+            : 0
+      };
+    }
+  );
+
+  return result;
+}
+
+
+function classificationCoverage() {
+  const result = {
+    total: personOrder.length,
+    classified: 0,
+    missing: 0,
+    W: 0,
+    M: 0,
+    F: 0,
+    U: 0
+  };
+
+  personOrder.forEach(
+    key => {
+      const entity =
+        personIndex.get(key);
+
+      const code =
+        classificationCode(
+          entity?.classificationCode
+        );
+
+      if (!code) {
+        result.missing += 1;
+        return;
+      }
+
+      result.classified += 1;
+      result[code] += 1;
+    }
+  );
+
+  return result;
+}
+
+
+function renderClassificationCoverage() {
+  const element =
+    document.getElementById(
+      "sharesClassificationCoverage"
+    );
+
+  if (!element) {
+    return;
+  }
+
+  const coverage =
+    classificationCoverage();
+
+  if (!coverage.total) {
+    element.innerHTML = "";
+    element.classList.add(
+      "hidden"
+    );
+    return;
+  }
+
+  element.innerHTML = `
+    <div class="shares-classification-coverage-head">
+      <div>
+        <small>Klassifikation aus nodegoat</small>
+        <strong>
+          ${coverage.classified} von ${coverage.total}
+          Akteur*innen mit W / M / F / U versehen
+        </strong>
+      </div>
+
+      <div class="shares-classification-counts">
+        <span><b>W</b> ${coverage.W}</span>
+        <span><b>M</b> ${coverage.M}</span>
+        <span><b>F</b> ${coverage.F}</span>
+        <span><b>U</b> ${coverage.U}</span>
+      </div>
+    </div>
+
+    <p>
+      W = weiblich · M = männlich · F = Firma · U = unklar.
+      Firmen werden bewusst als eigene Kategorie behandelt.
+      Ein fehlender Wert wird nicht automatisch als «unklar» interpretiert.
+      ${
+        coverage.missing
+          ? `${coverage.missing} Akteur*innen besitzen im analysierten Korpus keinen Klassifikationswert.`
+          : "Für alle im analysierten Korpus vorkommenden Akteur*innen liegt ein Klassifikationswert vor."
+      }
+    </p>
+  `;
+
+  element.classList.remove(
+    "hidden"
+  );
+}
+
+
+function classificationDataset(code, data, stack) {
+  return {
+    label:
+      CLASSIFICATION_CHART_LABELS[
+        code
+      ],
+    data,
+    stack,
+    backgroundColor:
+      CLASSIFICATION_COLORS[
+        code
+      ].background,
+    borderColor:
+      CLASSIFICATION_COLORS[
+        code
+      ].border,
+    borderWidth: 1
+  };
+}
+
+
+function renderClassificationCountChart() {
+  const canvas =
+    document.getElementById(
+      "sharesClassificationCountChart"
+    );
+
+  if (
+    !canvas ||
+    typeof Chart === "undefined"
+  ) {
+    return;
+  }
+
+  sharesClassificationCountChart =
+    destroyShareChart(
+      sharesClassificationCountChart
+    );
+
+  const labels =
+    gvOrder.map(
+      shareGvLabel
+    );
+
+  const stats =
+    gvOrder.map(
+      classificationStatsForGv
+    );
+
+  sharesClassificationCountChart =
+    new Chart(
+      canvas,
+      {
+        type: "bar",
+
+        data: {
+          labels,
+          datasets:
+            CLASSIFICATION_ORDER.map(
+              code =>
+                classificationDataset(
+                  code,
+                  stats.map(
+                    value =>
+                      value[
+                        code
+                      ].actors
+                  ),
+                  "classification-actors"
+                )
+            )
+        },
+
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+
+          interaction: {
+            mode: "index",
+            intersect: false
+          },
+
+          plugins: {
+            legend: {
+              position: "bottom"
+            },
+
+            tooltip: {
+              callbacks: {
+                footer(items) {
+                  const index =
+                    items?.[0]?.dataIndex;
+
+                  if (
+                    index === undefined
+                  ) {
+                    return "";
+                  }
+
+                  const total =
+                    CLASSIFICATION_ORDER
+                      .reduce(
+                        (sum, code) =>
+                          sum +
+                          stats[index][code]
+                            .actors,
+                        0
+                      );
+
+                  return (
+                    "Klassifizierte Akteur*innen: " +
+                    formatNumber(total)
+                  );
+                }
+              }
+            }
+          },
+
+          scales: {
+            x: {
+              stacked: true,
+              grid: {
+                color:
+                  "rgba(243, 240, 233, 0.08)"
+              }
+            },
+
+            y: {
+              stacked: true,
+              beginAtZero: true,
+              ticks: {
+                precision: 0
+              },
+              grid: {
+                color:
+                  "rgba(243, 240, 233, 0.08)"
+              },
+              title: {
+                display: true,
+                text:
+                  "Dokumentierte Akteur*innen"
+              }
+            }
+          }
+        }
+      }
+    );
+}
+
+
+function renderClassificationSharesChart() {
+  const canvas =
+    document.getElementById(
+      "sharesClassificationSharesChart"
+    );
+
+  if (
+    !canvas ||
+    typeof Chart === "undefined"
+  ) {
+    return;
+  }
+
+  sharesClassificationSharesChart =
+    destroyShareChart(
+      sharesClassificationSharesChart
+    );
+
+  const labels =
+    gvOrder.map(
+      shareGvLabel
+    );
+
+  const stats =
+    gvOrder.map(
+      classificationStatsForGv
+    );
+
+  sharesClassificationSharesChart =
+    new Chart(
+      canvas,
+      {
+        type: "bar",
+
+        data: {
+          labels,
+          datasets:
+            CLASSIFICATION_ORDER.map(
+              code =>
+                classificationDataset(
+                  code,
+                  stats.map(
+                    value =>
+                      value[
+                        code
+                      ].sharePercent
+                  ),
+                  "classification-shares"
+                )
+            )
+        },
+
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+
+          interaction: {
+            mode: "index",
+            intersect: false
+          },
+
+          plugins: {
+            legend: {
+              position: "bottom"
+            },
+
+            tooltip: {
+              callbacks: {
+                label(context) {
+                  return (
+                    `${context.dataset.label}: ` +
+                    `${context.parsed.y.toFixed(1)} %`
+                  );
+                },
+
+                footer(items) {
+                  const index =
+                    items?.[0]?.dataIndex;
+
+                  if (
+                    index === undefined
+                  ) {
+                    return "";
+                  }
+
+                  const included =
+                    CLASSIFICATION_ORDER
+                      .reduce(
+                        (sum, code) =>
+                          sum +
+                          stats[index][code]
+                            .shares,
+                        0
+                      );
+
+                  return (
+                    "Auswertbare klassifizierte Aktien: " +
+                    formatNumber(included) +
+                    " / " +
+                    formatNumber(
+                      stats[index].gvTotal
+                    )
+                  );
+                }
+              }
+            }
+          },
+
+          scales: {
+            x: {
+              stacked: true,
+              grid: {
+                color:
+                  "rgba(243, 240, 233, 0.08)"
+              }
+            },
+
+            y: {
+              stacked: true,
+              beginAtZero: true,
+              max: 100,
+              grid: {
+                color:
+                  "rgba(243, 240, 233, 0.08)"
+              },
+              title: {
+                display: true,
+                text:
+                  "Anteil am dokumentierten Aktienbestand (%)"
+              },
+              ticks: {
+                callback(value) {
+                  return `${value} %`;
+                }
+              }
+            }
+          }
+        }
+      }
+    );
+}
+
+
 function renderShareVisualisations() {
   configureShareCharts();
 
@@ -1736,8 +2336,11 @@ function renderShareVisualisations() {
   }
 
   renderShareDataQuality();
+  renderClassificationCoverage();
   populateShareEntitySelect();
   renderShareTypeChart();
+  renderClassificationCountChart();
+  renderClassificationSharesChart();
   renderShareConcentrationChart();
   renderShareEntityChart();
 }
@@ -1852,6 +2455,12 @@ function renderPersonCards() {
           entity.displayName
         )}
       </strong>
+
+      <span class="person-card-classification">
+        ${escapeHtml(
+          entity.classificationLabel
+        )}
+      </span>
 
       <span class="person-card-meta">
         ${entity.gvCount}
@@ -2238,6 +2847,13 @@ function renderPersonProfile() {
   setText(
     "personProfileName",
     entity.displayName
+  );
+
+  setText(
+    "personProfileClassification",
+    classificationProfileLabel(
+      entity.classificationCode
+    )
   );
 
   const variants = [

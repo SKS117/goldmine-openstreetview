@@ -1550,6 +1550,37 @@ pnx-viewer#panoramaxViewer {
   text-decoration-color: var(--text);
 }
 
+/* Einheitliche Darstellung der unteren Links in den vier Karten
+   der methodischen Basis.
+   Die Regel greift sowohl über die Klasse .workflow-link als auch
+   strukturell auf den letzten Link der Karte bzw. des Bottom-Wrappers. */
+.workflow-foundation-card > a.workflow-link,
+.workflow-foundation-card > a:last-child,
+.workflow-foundation-card .workflow-card-bottom > a.workflow-link,
+.workflow-foundation-card .workflow-card-bottom > a:last-child {
+  display: inline-block;
+  width: fit-content;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif !important;
+
+  font-size: 0.76rem !important;
+  font-weight: 650 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+
+  color: var(--text);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
 .workflow-mini-flow {
   display: flex;
   align-items: center;
@@ -4589,4 +4620,2350 @@ pnx-viewer#panoramaxViewer {
   .workflow-publication-note {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* =========================================================
+   FORSCHUNGSANSATZ: QUELLEN UND DATEN
+   ========================================================= */
+
+.research-source-overview {
+  position: relative;
+  overflow: hidden;
+}
+
+.research-source-overview::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(243, 240, 233, 0.42),
+    rgba(243, 240, 233, 0.08)
+  );
+}
+
+.research-source-overview > h3 {
+  margin-bottom: 12px;
+}
+
+.research-source-lead {
+  max-width: 980px !important;
+  margin-bottom: 20px !important;
+  font-size: 1rem;
+  line-height: 1.72 !important;
+  color: var(--text) !important;
+}
+
+.research-source-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  margin: 0 0 18px;
+}
+
+.research-source-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  min-height: 116px;
+  padding: 14px 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+}
+
+.research-source-fact-label {
+  font-size: .61rem;
+  font-weight: 750;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.research-source-fact strong {
+  margin-top: 2px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .95rem;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.research-source-fact > span:last-child {
+  margin-top: auto;
+  font-size: .69rem;
+  line-height: 1.42;
+  color: var(--text-muted);
+}
+
+.research-source-details {
+  margin-top: 4px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.research-source-details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 2px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.research-source-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.research-source-details summary:hover .research-source-details-title strong {
+  color: var(--text);
+}
+
+.research-source-details summary:focus-visible {
+  outline: 2px solid rgba(243, 240, 233, 0.72);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.research-source-details-title {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.research-source-details-title small {
+  font-size: .59rem;
+  font-weight: 750;
+  letter-spacing: .085em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.research-source-details-title strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.3;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color .18s ease;
+}
+
+.research-source-details-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.research-source-details-hint {
+  font-size: .61rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.research-source-details-icon {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  font-size: .95rem;
+  line-height: 1;
+  color: var(--text-muted);
+  transition: transform .18s ease, background .18s ease;
+}
+
+.research-source-details[open] .research-source-details-icon {
+  transform: rotate(45deg);
+  background: rgba(255,255,255,.04);
+}
+
+.research-source-details[open] .research-source-details-hint {
+  display: none;
+}
+
+.research-source-details-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 24px;
+  padding: 3px 2px 20px;
+}
+
+.research-source-subsection {
+  min-width: 0;
+  padding: 18px 0 19px;
+  border-top: 1px solid var(--border);
+}
+
+.research-source-subsection:nth-child(-n + 2) {
+  border-top-color: var(--border-strong);
+}
+
+.research-source-subheading {
+  margin: 0 0 8px !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .98rem;
+  line-height: 1.25 !important;
+  font-weight: 500;
+  color: var(--text) !important;
+}
+
+.research-source-subsection > p:last-child {
+  margin: 0 !important;
+  font-size: .82rem;
+  line-height: 1.67 !important;
+  color: var(--text-muted) !important;
+}
+
+.research-source-subsection-limit {
+  border-top-style: dashed;
+}
+
+.research-source-method-note {
+  grid-column: 1 / -1;
+  max-width: 980px !important;
+  margin: 4px 0 0 !important;
+  padding: 14px 15px;
+  border-left: 2px solid var(--border-strong);
+  background: rgba(255,255,255,.018);
+  font-size: .78rem;
+  line-height: 1.62 !important;
+  color: var(--text-muted) !important;
+}
+
+.research-source-transition {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin-top: 18px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255,255,255,.022);
+}
+
+.research-source-transition-label {
+  padding-top: 2px;
+  font-size: .61rem;
+  font-weight: 750;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.research-source-transition p {
+  max-width: 920px !important;
+  margin: 0 !important;
+  font-size: .82rem;
+  line-height: 1.64 !important;
+  color: var(--text-muted) !important;
+}
+
+@media (max-width: 980px) {
+  .research-source-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .research-source-details-content {
+    grid-template-columns: 1fr;
+  }
+
+  .research-source-subsection:nth-child(2) {
+    border-top-color: var(--border);
+  }
+}
+
+@media (max-width: 700px) {
+  .research-source-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .research-source-fact {
+    min-height: 0;
+  }
+
+  .research-source-details summary {
+    align-items: flex-start;
+  }
+
+  .research-source-details-hint {
+    display: none;
+  }
+
+  .research-source-transition {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .research-source-details-title strong,
+  .research-source-details-icon {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   FORSCHUNGSANSATZ: HISTORISCHE PERSPEKTIVE & VISUALISIERUNG
+   ========================================================= */
+
+.research-visualisation-block {
+  overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   EINLEITUNG DES VISUALISIERUNGSBEREICHS
+   --------------------------------------------------------- */
+
+.research-visualisation-block > h3 {
+  max-width: 760px;
+  margin-bottom: 14px;
+}
+
+.research-visualisation-block > h3 + p {
+  max-width: 880px;
+  margin: 0;
+
+  font-size: 0.96rem;
+  line-height: 1.7;
+
+  color: var(--text-muted);
+}
+
+
+/* ---------------------------------------------------------
+   VIER ANALYSEPERSPEKTIVEN
+   --------------------------------------------------------- */
+
+.research-visual-perspectives {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  width: 100%;
+  margin: 26px 0 24px;
+}
+
+
+/* ---------------------------------------------------------
+   EINZELNE KARTE
+   --------------------------------------------------------- */
+
+.research-visual-perspective {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 100%;
+
+  padding: 22px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.012)
+    );
+}
+
+
+/* Kleine Linie als visueller Akzent */
+
+.research-visual-perspective::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 22px;
+
+  width: 42px;
+  height: 2px;
+
+  background: rgba(243, 240, 233, 0.35);
+}
+
+
+/* ---------------------------------------------------------
+   KLEINE KATEGORIEÜBERSCHRIFT
+   --------------------------------------------------------- */
+
+.research-visual-perspective .research-kicker {
+  margin-bottom: 9px !important;
+
+  font-size: 0.65rem;
+  letter-spacing: 0.09em;
+
+  color: var(--text-faint) !important;
+}
+
+
+/* ---------------------------------------------------------
+   KARTENÜBERSCHRIFT
+   --------------------------------------------------------- */
+
+.research-visual-perspective h4 {
+  margin: 0 0 15px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.08rem;
+  line-height: 1.25;
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+
+/* ---------------------------------------------------------
+   ERSTER TEXTABSATZ DER KARTE
+   --------------------------------------------------------- */
+
+.research-visual-perspective p:not(.research-kicker) {
+  margin: 0 0 14px;
+
+  font-size: 0.83rem;
+  line-height: 1.62;
+
+  color: var(--text-muted);
+}
+
+
+/* ---------------------------------------------------------
+   ZWEITER ABSATZ:
+   METHODISCHE EINORDNUNG ETWAS ZURÜCKNEHMEN
+   --------------------------------------------------------- */
+
+.research-visual-perspective p:not(.research-kicker)
+  + p:not(.research-kicker) {
+
+  margin-top: 2px;
+  margin-bottom: 0;
+
+  padding-top: 14px;
+
+  border-top: 1px solid var(--border);
+
+  font-size: 0.77rem;
+  line-height: 1.6;
+
+  color: var(--text-faint);
+}
+
+
+/* Falls eine Karte nur einen Absatz hat */
+
+.research-visual-perspective p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   DIGITALE PRÄSENTATION
+   Eigenständige Vermittlungsebene unter den vier
+   historischen Analyseperspektiven
+   --------------------------------------------------------- */
+
+.research-digital-presentation {
+  position: relative;
+  overflow: hidden;
+
+  margin: 30px 0 24px;
+  padding: 24px;
+
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(243, 240, 233, 0.065),
+      rgba(243, 240, 233, 0.018)
+    ),
+    var(--surface-soft);
+}
+
+.research-digital-presentation::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 24px;
+
+  width: 58px;
+  height: 2px;
+
+  background: rgba(243, 240, 233, 0.52);
+}
+
+.research-digital-presentation-header {
+  max-width: 900px;
+  margin-bottom: 22px;
+}
+
+.research-digital-presentation-header h4 {
+  margin: 0 0 11px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.24rem;
+  line-height: 1.25;
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+.research-digital-presentation-header > p:last-child {
+  max-width: 850px;
+  margin: 0;
+
+  font-size: 0.84rem;
+  line-height: 1.66;
+
+  color: var(--text-muted);
+}
+
+.research-digital-presentation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.research-digital-presentation-item {
+  min-width: 0;
+  padding: 19px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.022);
+}
+
+.research-digital-presentation-item .research-kicker {
+  margin-bottom: 8px !important;
+  font-size: 0.63rem;
+}
+
+.research-digital-presentation-item h5 {
+  margin: 0 0 13px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1rem;
+  line-height: 1.3;
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+.research-digital-presentation-item p:not(.research-kicker) {
+  margin: 0 0 13px;
+
+  font-size: 0.78rem;
+  line-height: 1.62;
+
+  color: var(--text-muted);
+}
+
+.research-digital-presentation-item p:not(.research-kicker)
+  + p:not(.research-kicker) {
+
+  margin-bottom: 0;
+  padding-top: 13px;
+
+  border-top: 1px solid var(--border);
+
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+/* ---------------------------------------------------------
+   ABSCHLIESSENDE KERNAUSSAGE
+   --------------------------------------------------------- */
+
+.research-visualisation-block > .research-thesis {
+  max-width: none;
+
+  margin: 0 !important;
+  padding: 18px 20px;
+
+  border-left: 2px solid rgba(243, 240, 233, 0.38);
+  border-radius: 0 10px 10px 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 0.98rem;
+  line-height: 1.62;
+
+  color: var(--text) !important;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================================
+   RESPONSIVE: TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .research-visual-perspectives {
+    gap: 12px;
+  }
+
+  .research-visual-perspective {
+    padding: 20px;
+  }
+
+  .research-visual-perspective::before {
+    left: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .research-visual-perspectives,
+  .research-digital-presentation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-digital-presentation {
+    padding: 20px;
+  }
+
+  .research-digital-presentation::before {
+    left: 20px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE: SMARTPHONE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .research-visualisation-block > h3 + p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .research-visual-perspectives {
+    gap: 10px;
+
+    margin: 20px 0;
+  }
+
+  .research-visual-perspective {
+    padding: 18px;
+
+    border-radius: 12px;
+  }
+
+  .research-visual-perspective::before {
+    left: 18px;
+
+    width: 34px;
+  }
+
+  .research-visual-perspective h4 {
+    margin-bottom: 12px;
+
+    font-size: 1rem;
+  }
+
+  .research-visual-perspective p:not(.research-kicker) {
+    font-size: 0.81rem;
+    line-height: 1.58;
+  }
+
+  .research-visual-perspective p:not(.research-kicker)
+    + p:not(.research-kicker) {
+
+    padding-top: 12px;
+
+    font-size: 0.76rem;
+  }
+
+  .research-digital-presentation {
+    margin: 22px 0 20px;
+    padding: 18px;
+
+    border-radius: 12px;
+  }
+
+  .research-digital-presentation::before {
+    left: 18px;
+    width: 40px;
+  }
+
+  .research-digital-presentation-header {
+    margin-bottom: 16px;
+  }
+
+  .research-digital-presentation-header h4 {
+    font-size: 1.08rem;
+  }
+
+  .research-digital-presentation-grid {
+    gap: 10px;
+  }
+
+  .research-digital-presentation-item {
+    padding: 16px;
+  }
+
+  .research-visualisation-block > .research-thesis {
+    padding: 15px 16px;
+
+    font-size: 0.9rem;
+    line-height: 1.58;
+  }
+}
+
+/* =========================================================
+   FORSCHUNGSANSATZ: DATENMODELLIERUNG
+   ========================================================= */
+
+.research-data-model {
+  overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   EINLEITUNG
+   --------------------------------------------------------- */
+
+.research-data-model > h3 {
+  max-width: 820px;
+  margin-bottom: 14px;
+
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  line-height: 1.2;
+}
+
+.research-data-model > .data-model-lead {
+  max-width: 880px;
+
+  margin: 0;
+
+  font-size: 0.96rem;
+  line-height: 1.7;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   VIER MODELLIERUNGSPRINZIPIEN
+   ========================================================= */
+
+.data-model-principles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  margin: 26px 0 24px;
+}
+
+
+/* ---------------------------------------------------------
+   EINZELNE PRINZIP-KARTE
+   --------------------------------------------------------- */
+
+.data-model-principle {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  padding: 20px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.012)
+    );
+}
+
+
+/* Nummer */
+
+.data-model-number {
+  display: grid;
+  place-items: center;
+
+  width: 34px;
+  height: 34px;
+
+  margin-bottom: 16px;
+
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 0.76rem;
+
+  color: var(--text-muted);
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* Kleine Kategorie */
+
+.data-model-principle .research-kicker {
+  margin-bottom: 7px !important;
+
+  font-size: 0.62rem;
+  letter-spacing: 0.09em;
+
+  color: var(--text-faint) !important;
+}
+
+
+/* Überschrift */
+
+.data-model-principle h4 {
+  margin: 0 0 13px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.02rem;
+  line-height: 1.3;
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+
+/* Text */
+
+.data-model-principle p:not(.research-kicker) {
+  margin: 0;
+
+  font-size: 0.8rem;
+  line-height: 1.62;
+
+  color: var(--text-muted);
+}
+
+
+/* Kleine Linie oben als visueller Akzent */
+
+.data-model-principle::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 20px;
+
+  width: 38px;
+  height: 2px;
+
+  background: rgba(243, 240, 233, 0.34);
+}
+
+
+/* =========================================================
+   TECHNISCHE UMSETZUNG
+   ========================================================= */
+
+.data-model-technical {
+  margin: 0 0 20px;
+
+  padding: 20px;
+
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(243, 240, 233, 0.055),
+      rgba(243, 240, 233, 0.012)
+    );
+}
+
+
+/* Überschrift technischer Teil */
+
+.data-model-technical-heading {
+  margin-bottom: 13px;
+}
+
+.data-model-technical-heading .research-kicker {
+  margin-bottom: 6px !important;
+}
+
+.data-model-technical-heading h4 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.08rem;
+  line-height: 1.3;
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+
+/* Erklärungstext */
+
+.data-model-technical > p {
+  max-width: 900px;
+
+  margin: 0 0 20px;
+
+  font-size: 0.82rem;
+  line-height: 1.65;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   VEREINFACHTES DATENMODELL
+   ========================================================= */
+
+.data-model-diagram {
+  display: grid;
+
+  grid-template-columns:
+    minmax(150px, 0.8fr)
+    auto
+    minmax(170px, 0.9fr)
+    auto
+    minmax(260px, 1.3fr);
+
+  gap: 10px;
+
+  align-items: center;
+
+  width: 100%;
+
+  padding-top: 17px;
+
+  border-top: 1px solid var(--border);
+}
+
+
+/* Boxen im Diagramm */
+
+.data-model-diagram > div {
+  display: grid;
+
+  gap: 5px;
+
+  min-width: 0;
+
+  padding: 14px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* Kleine Beschriftung */
+
+.data-model-diagram small {
+  font-size: 0.58rem;
+  font-weight: 750;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--text-faint);
+}
+
+
+/* Hauptbegriff */
+
+.data-model-diagram strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 0.87rem;
+  line-height: 1.35;
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+
+/* Pfeile */
+
+.data-model-diagram > span {
+  display: grid;
+  place-items: center;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.25rem;
+
+  color: var(--text-faint);
+}
+
+
+/* =========================================================
+   SCHLUSSAUSSAGE
+   ========================================================= */
+
+.research-data-model > .data-model-conclusion {
+  max-width: none;
+
+  margin: 0 !important;
+
+  padding: 17px 19px;
+
+  border-left: 2px solid rgba(243, 240, 233, 0.38);
+  border-radius: 0 10px 10px 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 0.96rem;
+  line-height: 1.6;
+
+  color: var(--text) !important;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================================
+   RESPONSIVE: TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .data-model-diagram {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .data-model-diagram > span {
+    transform: rotate(90deg);
+    height: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .data-model-principles {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE: SMARTPHONE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .research-data-model > .data-model-lead {
+    font-size: 0.9rem;
+  }
+
+
+  .data-model-principles {
+    gap: 10px;
+
+    margin: 20px 0;
+  }
+
+
+  .data-model-principle {
+    padding: 17px;
+
+    border-radius: 12px;
+  }
+
+
+  .data-model-principle::before {
+    left: 17px;
+
+    width: 32px;
+  }
+
+
+  .data-model-principle h4 {
+    font-size: 0.98rem;
+  }
+
+
+  .data-model-principle p:not(.research-kicker) {
+    font-size: 0.79rem;
+  }
+
+
+  .data-model-technical {
+    padding: 17px;
+  }
+
+
+  .data-model-technical > p {
+    font-size: 0.79rem;
+  }
+
+
+  .research-data-model > .data-model-conclusion {
+    padding: 15px 16px;
+
+    font-size: 0.9rem;
+  }
+}
+
+/* Workflow-Intro: mehrere Absätze in derselben Grid-Spalte */
+
+.workflow-intro-group {
+  display: grid;
+  gap: 16px;
+
+  max-width: 720px;
+}
+
+.workflow-intro-group .workflow-intro {
+  margin: 0;
+}
+
+/* =========================================================
+   WORKFLOW: ERGEBNIS & REFLEXION
+   ========================================================= */
+
+.workflow-result-expanded {
+  margin-top: 24px;
+  padding: 28px;
+
+  border: 1px solid var(--border-strong);
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(243, 240, 233, 0.065),
+      rgba(243, 240, 233, 0.012)
+    );
+}
+
+
+/* =========================================================
+   KOPFBEREICH
+   ========================================================= */
+
+.workflow-result-heading {
+  max-width: 940px;
+  margin-bottom: 26px;
+}
+
+.workflow-result-heading h3 {
+  max-width: 760px;
+
+  margin-bottom: 13px;
+
+  font-size: clamp(1.4rem, 2.3vw, 1.85rem);
+  line-height: 1.18;
+}
+
+.workflow-result-lead {
+  max-width: 880px !important;
+
+  margin: 0 !important;
+
+  font-size: 0.92rem !important;
+  line-height: 1.7 !important;
+
+  color: var(--text-muted) !important;
+}
+
+
+/* =========================================================
+   LERNBEREICHE
+   ========================================================= */
+
+.workflow-result-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   EINZELNE KARTE
+   ========================================================= */
+
+.workflow-result-card {
+  position: relative;
+
+  min-width: 0;
+
+  padding: 21px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.01)
+    );
+}
+
+
+/* Nummer */
+
+.workflow-result-number {
+  display: grid;
+  place-items: center;
+
+  width: 34px;
+  height: 34px;
+
+  margin-bottom: 16px;
+
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 0.72rem;
+
+  color: var(--text-muted);
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* Überschrift */
+
+.workflow-result-card h4 {
+  max-width: 520px;
+
+  margin: 0 0 14px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.05rem;
+  line-height: 1.3;
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+
+/* Fliesstext */
+
+.workflow-result-card > p:not(.research-kicker),
+.workflow-result-reflection-text p {
+  margin: 0 0 13px;
+
+  font-size: 0.79rem;
+  line-height: 1.65;
+
+  color: var(--text-muted);
+}
+
+.workflow-result-card > p:last-child,
+.workflow-result-reflection-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   KRITISCHE REFLEXION
+   ========================================================= */
+
+.workflow-result-card-wide {
+  grid-column: 1 / -1;
+}
+
+
+.workflow-result-reflection {
+  margin-top: 2px;
+
+  border-color: var(--border-strong);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(243, 240, 233, 0.055),
+      rgba(243, 240, 233, 0.012)
+    );
+}
+
+
+.workflow-result-reflection-content {
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 0.65fr)
+    minmax(0, 1.35fr);
+
+  gap: 32px;
+
+  align-items: start;
+}
+
+
+.workflow-result-reflection-content h4 {
+  margin-bottom: 0;
+
+  font-size: 1.15rem;
+}
+
+
+.workflow-result-reflection-text {
+  min-width: 0;
+}
+
+
+/* Die besonders kritische Aussage optisch hervorheben */
+
+.workflow-result-reflection-text p:nth-child(3) {
+  margin-top: 17px;
+  padding: 15px 17px;
+
+  border-left: 2px solid rgba(243, 240, 233, 0.38);
+
+  color: var(--text);
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================================
+   ABSCHLUSS / ZENTRALE ERKENNTNIS
+   ========================================================= */
+
+.workflow-result-conclusion {
+  display: grid;
+
+  grid-template-columns:
+    150px
+    minmax(0, 1fr);
+
+  gap: 20px;
+
+  align-items: start;
+
+  margin-top: 14px;
+  padding: 18px 20px;
+
+  border-top: 1px solid var(--border-strong);
+}
+
+
+.workflow-result-conclusion-label {
+  padding-top: 2px;
+
+  font-size: 0.62rem;
+  font-weight: 750;
+
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+
+  color: var(--text-faint);
+}
+
+
+.workflow-result-conclusion p {
+  max-width: 850px;
+
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 0.94rem;
+  line-height: 1.62;
+
+  color: var(--text);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .workflow-result-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .workflow-result-card-wide {
+    grid-column: auto;
+  }
+
+
+  .workflow-result-reflection-content {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+
+  .workflow-result-conclusion {
+    grid-template-columns: 1fr;
+
+    gap: 7px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .workflow-result-expanded {
+    padding: 18px;
+
+    border-radius: 16px;
+  }
+
+
+  .workflow-result-card {
+    padding: 18px;
+  }
+
+
+  .workflow-result-lead {
+    font-size: 0.87rem !important;
+  }
+
+
+  .workflow-result-card > p:not(.research-kicker),
+  .workflow-result-reflection-text p {
+    font-size: 0.78rem;
+  }
+
+
+  .workflow-result-reflection-text p:nth-child(3) {
+    padding: 13px 14px;
+  }
+
+
+  .workflow-result-conclusion {
+    padding: 16px 2px 2px;
+  }
+}
+
+
+/* =========================================================
+   W/M/F/U-KLASSIFIKATION
+   ========================================================= */
+
+.person-card-classification {
+  margin: -7px 0 14px;
+  padding: 4px 7px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  font-size: 0.62rem;
+  line-height: 1;
+
+  color: var(--text-faint);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* Sechs Kennzahlen auf grossen Bildschirmen */
+.person-profile-stats {
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+}
+
+#personProfileClassification {
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+
+/* ---------------------------------------------------------
+   Klassifikations-Abdeckung
+   --------------------------------------------------------- */
+
+.shares-classification-coverage {
+  display: grid;
+  gap: 10px;
+
+  margin: -7px 0 18px;
+  padding: 14px 16px;
+
+  border: 1px solid var(--border);
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      105deg,
+      rgba(157, 201, 214, 0.055),
+      rgba(255, 255, 255, 0.015)
+    );
+}
+
+.shares-classification-coverage-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.shares-classification-coverage-head small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 0.57rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--text-faint);
+}
+
+.shares-classification-coverage-head strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 0.86rem;
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+.shares-classification-counts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.shares-classification-counts span {
+  padding: 5px 7px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  font-size: 0.64rem;
+
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.shares-classification-counts b {
+  margin-right: 3px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+.shares-classification-coverage > p {
+  max-width: 920px;
+
+  margin: 0;
+
+  font-size: 0.7rem;
+  line-height: 1.55;
+
+  color: var(--text-faint);
+}
+
+
+/* ---------------------------------------------------------
+   Hinweise unter den zwei Klassifikationsdiagrammen
+   --------------------------------------------------------- */
+
+.shares-classification-note {
+  min-height: 1.1em;
+
+  margin: 10px 2px 0;
+
+  font-size: 0.68rem;
+  line-height: 1.5;
+
+  color: var(--text-faint);
+}
+
+
+@media (max-width: 1050px) {
+  .person-profile-stats {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+
+@media (max-width: 820px) {
+  .shares-classification-coverage-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .shares-classification-counts {
+    justify-content: flex-start;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .person-profile-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   WORKFLOW 11: AUFKLAPPBARES SITE-DATA.JSON-BEISPIEL
+   ========================================================= */
+
+.workflow-site-data-details {
+  width: 100%;
+  max-width: 940px;
+
+  margin: 20px 0;
+
+  border: 1px solid var(--border-strong);
+  border-radius: 13px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.03),
+      rgba(255,255,255,.01)
+    );
+}
+
+
+/* Summary */
+
+.workflow-site-data-details > summary {
+  display: block;
+
+  padding: 16px 18px;
+
+  cursor: pointer;
+  list-style: none;
+}
+
+.workflow-site-data-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.workflow-site-data-details > summary:hover {
+  background: rgba(255,255,255,.025);
+}
+
+
+/* Kopf im geschlossenen Zustand */
+
+.workflow-site-data-summary {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.workflow-site-data-summary > div {
+  display: grid;
+  gap: 3px;
+}
+
+.workflow-site-data-summary small {
+  font-size: .58rem;
+  font-weight: 750;
+
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  color: var(--text-faint);
+}
+
+.workflow-site-data-summary strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: .95rem;
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+.workflow-site-data-summary code {
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    Menlo,
+    monospace;
+
+  font-size: .82em;
+}
+
+
+/* Plus-Button */
+
+.workflow-site-data-toggle {
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 29px;
+
+  width: 29px;
+  height: 29px;
+
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+
+  font-size: .95rem;
+  line-height: 1;
+
+  color: var(--text-muted);
+
+  transition:
+    transform .18s ease,
+    background .18s ease;
+}
+
+
+/* geöffnet → Plus wird zu X */
+
+.workflow-site-data-details[open]
+  .workflow-site-data-toggle {
+
+  transform: rotate(45deg);
+
+  background: rgba(255,255,255,.04);
+}
+
+
+/* Inhalt */
+
+.workflow-site-data-content {
+  padding: 18px;
+
+  border-top: 1px solid var(--border);
+}
+
+
+/* Einleitung */
+
+.workflow-site-data-heading {
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, .75fr)
+    minmax(300px, 1.25fr);
+
+  gap: 24px;
+  align-items: end;
+
+  margin-bottom: 15px;
+}
+
+.workflow-site-data-heading small {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: .58rem;
+  font-weight: 750;
+
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  color: var(--text-faint);
+}
+
+.workflow-site-data-heading h4 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.workflow-site-data-heading p {
+  margin: 0;
+
+  font-size: .74rem;
+  line-height: 1.58;
+
+  color: var(--text-muted);
+}
+
+
+/* JSON-Vorschau */
+
+.workflow-site-data-preview {
+  width: 100%;
+  max-height: 500px;
+
+  margin: 0;
+  padding: 16px;
+
+  overflow: auto;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  white-space: pre;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    Menlo,
+    monospace;
+
+  font-size: .68rem;
+  line-height: 1.55;
+
+  color: rgba(243,240,233,.88);
+  background: #121412;
+}
+
+.workflow-site-data-preview code {
+  font: inherit;
+  color: inherit;
+}
+
+
+/* Erklärung der JSON-Bereiche */
+
+.workflow-site-data-legend {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 9px;
+
+  margin-top: 12px;
+}
+
+.workflow-site-data-legend article {
+  padding: 13px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: rgba(255,255,255,.018);
+}
+
+.workflow-site-data-legend small {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: .58rem;
+  font-weight: 750;
+  letter-spacing: .075em;
+
+  color: var(--text-faint);
+}
+
+.workflow-site-data-legend strong {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: .84rem;
+  font-weight: 500;
+}
+
+.workflow-site-data-legend p {
+  margin: 0;
+
+  font-size: .69rem;
+  line-height: 1.52;
+
+  color: var(--text-muted);
+}
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+  .workflow-site-data-heading,
+  .workflow-site-data-legend {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  .workflow-site-data-toggle {
+    transition: none;
+  }
+
+}
+
+
+/* =========================================================
+   ERGEBNIS: TITEL AUF EINER ZEILE
+   ========================================================= */
+
+.workflow-result-heading {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.workflow-result-heading h3 {
+  max-width: none !important;
+  width: 100% !important;
+
+  font-size: clamp(1.35rem, 1.8vw, 1.65rem);
+  white-space: nowrap;
+}
+
+/* Auf kleineren Bildschirmen wieder normal umbrechen */
+@media (max-width: 1100px) {
+  .workflow-result-heading h3 {
+    white-space: normal;
+  }
+}
+/* =========================================================
+   ERGEBNIS & REFLEXION: VIERTEILIGER REFLEXIONSBLOCK
+   ========================================================= */
+
+.workflow-reflection-blog {
+  width: 100%;
+
+  margin-top: 22px;
+  padding: 26px;
+
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.025),
+      rgba(255,255,255,.008)
+    );
+}
+
+
+/* =========================================================
+   ÜBERSCHRIFT
+   ========================================================= */
+
+.workflow-reflection-heading {
+  width: 100%;
+  max-width: none;
+
+  margin-bottom: 26px;
+}
+
+.workflow-reflection-heading h3 {
+  width: 100%;
+  max-width: none;
+
+  margin: 5px 0 14px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(1.45rem, 2.05vw, 1.95rem);
+  line-height: 1.16;
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+.workflow-reflection-lead {
+  max-width: 980px;
+
+  margin: 0 0 9px;
+
+  font-size: .79rem;
+  line-height: 1.68;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   2 × 2 GRID
+   ========================================================= */
+
+.workflow-reflection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   REFLEXIONSKARTEN
+   ========================================================= */
+
+.workflow-reflection-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  padding: 21px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.026),
+      rgba(255,255,255,.012)
+    );
+}
+
+
+.workflow-reflection-card-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+
+  gap: 13px;
+
+  margin-bottom: 17px;
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+
+.workflow-reflection-number {
+  display: grid;
+  place-items: center;
+
+  width: 35px;
+  height: 35px;
+
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: .73rem;
+
+  color: var(--text-muted);
+
+  background: rgba(255,255,255,.025);
+}
+
+
+.workflow-reflection-card-head .research-kicker {
+  margin-bottom: 5px;
+}
+
+
+.workflow-reflection-card-head h4 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.08rem;
+  line-height: 1.27;
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+
+/* =========================================================
+   FLIESSTEXT
+   ========================================================= */
+
+.workflow-reflection-text {
+  flex: 1;
+}
+
+.workflow-reflection-text p {
+  margin: 0 0 13px;
+
+  font-size: .74rem;
+  line-height: 1.68;
+
+  color: var(--text-muted);
+}
+
+.workflow-reflection-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SPANNUNGSFELD
+   ========================================================= */
+
+.workflow-reflection-tension {
+  margin-top: 18px;
+  padding: 13px 14px;
+
+  border-left: 2px solid var(--border-strong);
+
+  background: rgba(255,255,255,.018);
+}
+
+.workflow-reflection-tension small {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: .58rem;
+  font-weight: 750;
+  letter-spacing: .085em;
+  text-transform: uppercase;
+
+  color: var(--text-faint);
+}
+
+.workflow-reflection-tension p {
+  margin: 0;
+
+  font-size: .7rem;
+  line-height: 1.58;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   WEITERFÜHRENDE FRAGE
+   ========================================================= */
+
+.workflow-reflection-question {
+  margin-top: 10px;
+  padding-top: 12px;
+
+  border-top: 1px solid var(--border);
+}
+
+.workflow-reflection-question span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: .58rem;
+  font-weight: 750;
+  letter-spacing: .085em;
+  text-transform: uppercase;
+
+  color: var(--text-faint);
+}
+
+.workflow-reflection-question p {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: .77rem;
+  line-height: 1.52;
+
+  color: var(--text);
+}
+
+
+/* =========================================================
+   ABSCHLUSS
+   ========================================================= */
+
+.workflow-reflection-conclusion {
+  display: grid;
+
+  grid-template-columns:
+    minmax(240px, .8fr)
+    minmax(360px, 1.2fr);
+
+  gap: 28px;
+
+  margin-top: 16px;
+  padding: 20px;
+
+  border: 1px solid var(--border-strong);
+  border-radius: 13px;
+
+  background: rgba(255,255,255,.018);
+}
+
+.workflow-reflection-conclusion small {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: .58rem;
+  font-weight: 750;
+  letter-spacing: .085em;
+  text-transform: uppercase;
+
+  color: var(--text-faint);
+}
+
+.workflow-reflection-conclusion h4 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.04rem;
+  line-height: 1.3;
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+.workflow-reflection-conclusion > p {
+  margin: 0;
+
+  font-size: .75rem;
+  line-height: 1.66;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .workflow-reflection-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .workflow-reflection-blog {
+    padding: 19px;
+  }
+
+  .workflow-reflection-conclusion {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .workflow-reflection-blog {
+    padding: 15px;
+  }
+
+  .workflow-reflection-card {
+    padding: 16px;
+  }
+
+  .workflow-reflection-card-head {
+    grid-template-columns: 1fr;
+  }
+
 }
