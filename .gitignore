@@ -69,3 +69,28 @@ nodegoat_*.py
 data/nodegoat_*
 data/gv2_*
 data/sample.json
+
+# ---------------------------------------------------------
+# Lokale Entwicklungs- und Diagnoseartefakte
+# ---------------------------------------------------------
+
+# Backups
+*.bak_*
+
+# Einmalige Hilfs-/Patchskripte
+apply_classification_web_update.py
+diagnose_*.py
+finde_geschlecht_id.py
+inspect_*.py
+patch_*.py
+
+# Alte / experimentelle Exporter
+export_hybrid_for_web_v3.py
+export_hybrid_for_web_v3_11012.py
+export_hybrid_for_web_v3_11012_FIXED.py
+export_nodegoat_for_web_v2.py
+
+# Temporäre Webexport-Zwischenstände
+data/site-data-nodegoat.json
+data/site-data-v3.json
+data/site-data_before_*.json
