@@ -1,5 +1,7 @@
 # Mines de Costano – digitale Forschungsumgebung
 
+Dieses README wurde von ChatGPT erstellt.
+
 Dieses Repository enthält die digitale Webpräsentation des Forschungsprojekts zu den Generalversammlungen und Aktionär*innen der Mines de Costano.
 
 Die Website verbindet:
